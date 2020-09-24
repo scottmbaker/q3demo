@@ -1,0 +1,22 @@
+onos-config:
+  plugins:
+    - name: devicesim
+      version: 1.0.0
+      image:
+        repository: onosproject/config-model-devicesim-1.0.0
+        tag: latest
+    - name: testdevice
+      version: 1.0.0
+      image:
+        repository: onosproject/config-model-testdevice-1.0.0
+        tag: latest
+    - name: testdevice
+      version: 2.0.0
+      image:
+        repository: onosproject/config-model-testdevice-2.0.0
+        tag: latest
+    - name: aether
+      version: 1.0.0
+      image:
+        repository: onosproject/config-model-aether-1.0.0
+        tag: latest
