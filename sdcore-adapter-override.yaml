@@ -1,3 +1,6 @@
 image:
   repository: smbaker/sdcore-adapter
   tag: smbaker
+  pullPolicy: Always
+
+spgwEndpoint: "http://spgwc.omec:8080/v1/config"
