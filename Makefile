@@ -14,14 +14,22 @@ sdcore-adapter-down:
 sdcore-adapter-topo:
 	./waitforpod.sh micro-onos sdcore-adapter
 	occli topo add device spgw-1 --address sdcore-adapter:5150 --role leaf --type Aether --version 1.0.0
+	#occli topo add device spgw-1 --address aether-roc-umbrella-sdcore-adapter:5150 --role leaf --type Aether --version 1.0.0
 
 sdcore-adapter-reinstall: sdcore-adapter-down sdcore-adapter-up
 
-aether-up: 
-	(helm ls -n micro-onos | grep onos-umbrella) || helm -n micro-onos install onos-umbrella onosproject/onos-umbrella -f values-override.yaml
+aether-helm-update:
+	cp aether-roc-umbrella-chart.yaml ${SDRAN_HELM_DIR}/aether-roc-umbrella/Chart.yaml
+	cd ${SDRAN_HELM_DIR} && helm dep update aether-roc-umbrella
+
+aether-up:
+	kubectl get namespace micro-onos 2> /dev/null || kubectl create namespace micro-onos
+	(helm ls -n micro-onos | grep aether-roc-umbrella) || helm -n micro-onos install aether-roc-umbrella ${SDRAN_HELM_DIR}/aether-roc-umbrella -f values-override.yaml
+#	(helm ls -n micro-onos | grep onos-umbrella) || helm -n micro-onos install onos-umbrella onosproject/onos-umbrella -f values-override.yaml
 
 aether-down:
-	((helm ls -n micro-onos | grep onos-umbrella) && helm del -n micro-onos onos-umbrella) || true
+	((helm ls -n micro-onos | grep aether-roc-umbrella) && helm del -n micro-onos aether-roc-umbrella) || true
+#	((helm ls -n micro-onos | grep onos-umbrella) && helm del -n micro-onos onos-umbrella) || true
 
 demo-up: aether-up sdcore-adapter-up sdcore-adapter-topo
 
