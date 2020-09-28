@@ -12,6 +12,7 @@ sdcore-adapter-down:
 	((helm ls -n micro-onos | grep sdcore-adapter) && helm del -n micro-onos sdcore-adapter) || true
 
 sdcore-adapter-topo:
+	./waitforpod.sh micro-onos sdcore-adapter
 	occli topo add device spgw-1 --address sdcore-adapter:5150 --role leaf --type Aether --version 1.0.0
 
 sdcore-adapter-reinstall: sdcore-adapter-down sdcore-adapter-up
@@ -22,10 +23,47 @@ aether-up:
 aether-down:
 	((helm ls -n micro-onos | grep onos-umbrella) && helm del -n micro-onos onos-umbrella) || true
 
+demo-up: aether-up sdcore-adapter-up sdcore-adapter-topo
+
+demo-down: aether-down sdcore-adapter-down
+
+demo-gnmi:
+	gnmiset set.access-profile.gnmi
+	sleep 2s
+	gnmiset set.apn-profile.gnmi
+	sleep 2s
+	gnmiset set.qos-profile.gnmi
+	sleep 2s
+	gnmiset set.up-profile.gnmi
+	sleep 2s
+	gnmiset set.subscriber.gnmi
+
 cleanup:
 	sdcore-adapter-down
 	aether-down
 
-reset-test1:
+sdcore-down:
+	cd ~/aether-in-a-box && make reset-test
+
+sdcore-up:
+	cd ~/aether-in-a-box && make /tmp/build/milestones/omec
+
+sdcore-test:
+	./waitforterm.sh omec
+	cd ~/aether-in-a-box && make test
+
+sdcore-retest: sdcore-reset-oaisim sdcore-test
+
+sdcore-reset-oaisim:
 	helm -n omec del oaisim || true
 	rm -f /tmp/build/milestones/oaisim
+
+install-go:
+	curl -L https://golang.org/dl/go1.14.5.linux-amd64.tar.gz -o /tmp/go1.14.5.linux-amd64.tar.gz
+	sudo tar -C /usr/local -xzf /tmp/go1.14.5.linux-amd64.tar.gz
+
+install-ksniff:
+	git clone https://github.com/eldadru/ksniff.git ~/ksniff
+	cd ~/ksniff && PATH=$PATH:/usr/local/go/bin make linux 
+	cd ~/ksniff && PATH=$PATH:/usr/local/go/bin make static-tcpdump
+	cd ~/ksniff && sudo make install
