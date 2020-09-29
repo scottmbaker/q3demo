@@ -46,6 +46,17 @@ demo-gnmi:
 	sleep 2s
 	gnmiset set.subscriber.gnmi
 
+demo-post:
+	aether-post access-profile access-profile.json
+	sleep 2s
+	aether-post apn-profile apn-profile.json
+	sleep 2s
+	aether-post qos-profile qos-profile.json
+	sleep 2s
+	aether-post up-profile up-profile.json
+	sleep 2s
+	aether-post subscriber subscriber.json
+
 cleanup:
 	sdcore-adapter-down
 	aether-down

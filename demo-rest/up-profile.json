@@ -1,0 +1,9 @@
+{
+    "ListAetherV100targetUpProfileUpProfile": [
+        {
+            "id": "profile-up-demo-1",
+            "description": "user-plane profile for spgwu1",
+            "user-plane": "upf-headless"
+        }
+    ]
+}

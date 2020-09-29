@@ -1,0 +1,13 @@
+{
+    "ListAetherV100targetApnProfileApnProfile": [
+        {
+            "id": "profile-apn-demo-1",
+            "description": "the default APN profile",
+            "mtu": 1460,
+            "apn-name": "internet",
+            "dns-primary": "8.8.8.4",
+            "dns-secondary": "8.8.8.8",
+            "gx-enabled": true
+        }
+    ]
+}

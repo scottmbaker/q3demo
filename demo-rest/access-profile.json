@@ -1,0 +1,9 @@
+{
+    "ListAetherV100targetAccessProfileAccessProfile": [
+        {
+            "description": "access profile that allows internet only",
+            "id": "profile-access-demo-1",
+            "type": "allow-all"
+        }
+    ]
+}
