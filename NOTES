@@ -1,7 +1,0 @@
-My notes so far:
-* export HELM_VERSION=v3.2.4
-* remove helm init from Makefile
-* remove {{ tuple "hss" . | include "omec-control-plane.metadata_labels" | indent 8 }} from job.spec.template.metadata in job-hss-bootstrap.yaml and job-hss-db-sync.yaml
-* run kubectl create namespace omec
-* ServiceName needs to be added to StatefulSet.spec in oaisim (I made up the service names oaisim-ue and oaisim-enb.
-Passed make test now. (edited)
