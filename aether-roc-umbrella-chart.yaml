@@ -1,0 +1,51 @@
+# SPDX-FileCopyrightText: 2020-present Open Networking Foundation <info@opennetworking.org>
+#
+# SPDX-License-Identifier: LicenseRef-ONF-Member-1.0
+
+apiVersion: v2
+name: aether-roc-umbrella
+description: Aether ROC Umbrella chart to deploy all Aether ROC
+kubeVersion: ">=1.17.0"
+type: application
+version: 0.0.12
+appVersion: v0.0.0
+keywords:
+  - aether
+  - sdn
+home: https://www.opennetworking.org/aether/
+maintainers:
+  - name: Aether Ops team
+    email: support@opennetworking.org
+dependencies:
+  - name: onos-topo
+    condition: import.onos-topo.enabled
+    repository: https://charts.onosproject.org
+    version: 0.0.14
+  - name: onos-config
+    condition: import.onos-config.enabled
+    repository: https://charts.onosproject.org
+    version: 0.0.17
+  - name: onos-gui
+    condition: import.onos-gui.enabled
+    repository: https://charts.onosproject.org
+    version: 0.0.8
+  - name: onos-sdran-cli
+    condition: import.onos-sdran-cli.enabled
+    repository: "file://../onos-sdran-cli"
+#    repository: "@sdran"
+    version: 0.0.9
+  - name: aether-roc-api
+    condition: import.aether-roc-api.enabled
+    repository: "file://../aether-roc-api"
+#    repository: "@sdran"
+    version: 0.0.4
+  - name: aether-roc-gui
+    condition: import.aether-roc-gui.enabled
+    repository: "file://../aether-roc-gui"
+#    repository: "@sdran"
+    version: 0.0.2
+  - name: sdcore-adapter
+    condition: import.sdcore-adapter.enabled
+    repository: "file://../sdcore-adapter"
+#    repository: "@sdran"
+    version: 0.0.2
