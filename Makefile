@@ -74,6 +74,9 @@ sdcore-test:
 sdcore-post:
 	sdcore-post ./sdcore-sample-json/sample.json
 
+sdcore-empty:
+	sdcore-post ./sdcore-sample-json/empty.json
+
 sdcore-retest: sdcore-reset-oaisim sdcore-test
 
 sdcore-reset-oaisim:

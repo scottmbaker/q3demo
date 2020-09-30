@@ -1,0 +1,59 @@
+{
+  "subscriber-selection-rules": [
+    {
+      "priority": 5,
+      "keys": {
+        "imsi-range": {
+          "from": 200000000000000,
+          "to": 299999999999999
+        },
+        "serving-plmn": {
+          "mcc": 208,
+          "mnc": 10,
+          "tac": 1
+        }
+      },
+      "selected-apn-profile": "profile-apn-demo-1",
+      "selected-access-profile": [
+        "profile-access-demo-1"
+      ],
+      "selected-qos-profile": "profile-qos-demo-1",
+      "selected-user-plane-profile": "profile-up-demo-1"
+    }
+  ],
+  "access-profiles": {
+    "profile-access-demo-1": {
+      "type": "allow-all"
+    }
+  },
+  "apn-profiles": {
+    "profile-apn-demo-1": {
+      "apn-name": "internet",
+      "dns-primary": "8.8.8.4",
+      "dns-secondary": "8.8.8.8",
+      "mtu": 1460,
+      "gx-enabled": true,
+      "network": "lbo",
+      "usage": 1
+    }
+  },
+  "qos-profiles": {
+    "profile-qos-demo-1": {
+      "apn-ambr": [
+        12345678,
+        12345678
+      ]
+    }
+  },
+  "user-plane-profiles": {
+    "profile-up-demo-1": {
+      "user-plane": "upf-headless",
+      "access-tags": {
+        "tag1": "ACC"
+      },
+      "qos-tags": {
+        "tag1": "BW"
+      }
+    }
+  }
+}
