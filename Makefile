@@ -58,6 +58,14 @@ demo-post:
 	sleep 2s
 	aether-post up-profile up-profile.json
 	sleep 2s
+	aether-post up-profile up-profile-wrong.json
+	sleep 2s
+	aether-post subscriber subscriber.json
+
+demo-wrong-up:
+	aether-post subscriber subscriber-wrong-up.json
+
+demo-right-up:
 	aether-post subscriber subscriber.json
 
 cleanup:

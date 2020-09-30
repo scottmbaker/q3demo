@@ -1,5 +1,11 @@
 ## Notes on running the demo
 
+Note: Run the following before running any makefile targets.
+
+```bash
+source env.sh
+```
+
 Notable makefile targets:
 
 ```bash
@@ -11,6 +17,12 @@ make demo-up
 
 # post all demo JSON to aether-roc-api
 make demo-post
+
+# change the subscriber to the wrong user-plane profile
+make demo-wrong-up
+
+# change the subscriber to the correct user-plane-profile
+make demo-right-up
 
 # shut down sdcore control components up
 make sdcore-down
@@ -35,16 +47,21 @@ Running the demo:
 # reset everything
 make sdcore-down demo-down
 make sdcore-up
-make sdcore-post
-make sdcore-retest  # this should pass
-make sdcore-empty
-make sdcore-retest  # this should fail
+make sdcore-retest  # this should fail as no subscriber is configured
 
 # push JSON using aether-roc
 make aether-up
-make aether-post
+make demo-post
 sdalog  # should show JSON pushed to spgwc
 make sdcore-retest  # should pass
+
+# change the user-plane profile
+make aether-wrong-up
+make sdcore-retest  # this should fail
+
+# change the user-plane profile back to the correct one
+make aether-right-up  # this sould succeed
+
 ```
 
 

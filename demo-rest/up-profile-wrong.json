@@ -1,0 +1,9 @@
+{
+    "ListAetherV100targetUpProfileUpProfile": [
+        {
+            "id": "profile-up-wrong",
+            "description": "user-plane profile for spgwu1",
+            "user-plane": "something-wrong"
+        }
+    ]
+}
