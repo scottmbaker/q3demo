@@ -71,11 +71,20 @@ sdcore-test:
 	./waitforterm.sh omec
 	cd ~/aether-in-a-box && make test
 
+sdcore-post:
+	sdcore-post ./sdcore-sample-json/sample.json
+
 sdcore-retest: sdcore-reset-oaisim sdcore-test
 
 sdcore-reset-oaisim:
 	helm -n omec del oaisim || true
 	rm -f /tmp/build/milestones/oaisim
+
+atomix-up:
+	helm repo add onosproject https://charts.onosproject.org
+	helm repo update
+	kubectl create -f https://raw.githubusercontent.com/atomix/kubernetes-controller/master/deploy/atomix-controller.yaml
+	kubectl create -f https://raw.githubusercontent.com/atomix/raft-storage-controller/master/deploy/raft-storage-controller.yaml && kubectl create -f https://raw.githubusercontent.com/atomix/cache-storage-controller/master/deploy/cache-storage-controller.yaml
 
 install-go:
 	curl -L https://golang.org/dl/go1.14.5.linux-amd64.tar.gz -o /tmp/go1.14.5.linux-amd64.tar.gz
