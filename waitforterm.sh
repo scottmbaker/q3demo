@@ -6,3 +6,4 @@ while [[ $PODS != "" ]]; do
     sleep 1s
     PODS=`kubectl -n $NAMESPACE get pods | grep -i terminating`
 done
+echo "no pods waiting to terminate"
