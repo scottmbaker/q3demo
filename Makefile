@@ -5,6 +5,9 @@ download-scripts:
 	git clone http://github.com/sbconsulting/misc /tmp/scott-misc
 	sudo cp /tmp/scott-misc/aether-scripts/* /usr/bin
 
+download-charts:
+	git clone git@github.com:sbconsulting/sdran-helm-charts.git
+
 sdcore-adapter-up:
 	(helm ls -n micro-onos | grep sdcore-adapter) || helm install -n micro-onos sdcore-adapter ${SDRAN_HELM_DIR}/sdcore-adapter -f sdcore-adapter-override.yaml
 
