@@ -66,7 +66,13 @@ demo-wrong-up:
 	aether-post subscriber subscriber-wrong-up.json
 
 demo-right-up:
-	aether-post subscriber subscriber.json
+	aether-post subscriber subscriber-right-up.json
+
+demo-disable:
+	aether-post subscriber subscriber-disabled.json
+
+demo-enable:
+	aether-post subscriber subscriber-enabled.json
 
 cleanup:
 	sdcore-adapter-down

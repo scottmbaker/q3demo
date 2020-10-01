@@ -50,17 +50,18 @@ make sdcore-up
 make sdcore-retest  # this should fail as no subscriber is configured
 
 # push JSON using aether-roc
-make aether-up
+make demo-up
 make demo-post
 sdalog  # should show JSON pushed to spgwc
 make sdcore-retest  # should pass
 
 # change the user-plane profile
-make aether-wrong-up
+make demo-wrong-up
 make sdcore-retest  # this should fail
 
 # change the user-plane profile back to the correct one
-make aether-right-up  # this sould succeed
+make demo-right-up
+make sdcore-retest  $ this should succeed
 
 ```
 
