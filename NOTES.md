@@ -24,6 +24,12 @@ make demo-wrong-up
 # change the subscriber to the correct user-plane-profile
 make demo-right-up
 
+# set the subscriber's enabled bit to false
+make demo-disabled
+
+# set the subscriber's enable bit back to true
+make demo-enabled
+
 # shut down sdcore control components up
 make sdcore-down
 
