@@ -16,8 +16,7 @@ sdcore-adapter-down:
 
 sdcore-adapter-topo:
 	./waitforpod.sh micro-onos sdcore-adapter
-	occli topo add device spgw-1 --address sdcore-adapter:5150 --role leaf --type Aether --version 1.0.0
-	#occli topo add device spgw-1 --address aether-roc-umbrella-sdcore-adapter:5150 --role leaf --type Aether --version 1.0.0
+	occli topo add device connectivity-service-v2 --address sdcore-adapter:5150 --role leaf --type Aether --version 2.0.0
 
 sdcore-adapter-reinstall: sdcore-adapter-down sdcore-adapter-up
 
@@ -40,13 +39,13 @@ demo-down: aether-down sdcore-adapter-down
 
 demo-gnmi:
 	gnmiset set.access-profile.gnmi
-	sleep 2s
+	#sleep 2s
 	gnmiset set.apn-profile.gnmi
-	sleep 2s
+	#sleep 2s
 	gnmiset set.qos-profile.gnmi
-	sleep 2s
+	#sleep 2s
 	gnmiset set.up-profile.gnmi
-	sleep 2s
+	#sleep 2s
 	gnmiset set.subscriber.gnmi
 
 demo-post:
