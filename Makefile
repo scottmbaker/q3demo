@@ -27,11 +27,9 @@ aether-helm-update:
 aether-up:
 	kubectl get namespace micro-onos 2> /dev/null || kubectl create namespace micro-onos
 	(helm ls -n micro-onos | grep aether-roc-umbrella) || helm -n micro-onos install aether-roc-umbrella ${SDRAN_HELM_DIR}/aether-roc-umbrella -f values-override.yaml
-#	(helm ls -n micro-onos | grep onos-umbrella) || helm -n micro-onos install onos-umbrella onosproject/onos-umbrella -f values-override.yaml
 
 aether-down:
 	((helm ls -n micro-onos | grep aether-roc-umbrella) && helm del -n micro-onos aether-roc-umbrella) || true
-#	((helm ls -n micro-onos | grep onos-umbrella) && helm del -n micro-onos onos-umbrella) || true
 
 demo-up: aether-up sdcore-adapter-up sdcore-adapter-topo
 
@@ -39,26 +37,17 @@ demo-down: aether-down sdcore-adapter-down
 
 demo-gnmi:
 	gnmiset set.access-profile.gnmi
-	#sleep 2s
 	gnmiset set.apn-profile.gnmi
-	#sleep 2s
 	gnmiset set.qos-profile.gnmi
-	#sleep 2s
 	gnmiset set.up-profile.gnmi
-	#sleep 2s
 	gnmiset set.subscriber.gnmi
 
 demo-post:
 	aether-post access-profile access-profile.json
-	sleep 2s
 	aether-post apn-profile apn-profile.json
-	sleep 2s
 	aether-post qos-profile qos-profile.json
-	sleep 2s
 	aether-post up-profile up-profile.json
-	sleep 2s
 	aether-post up-profile up-profile-wrong.json
-	sleep 2s
 	aether-post subscriber subscriber.json
 
 demo-wrong-up:
