@@ -5,7 +5,7 @@ SDRAN_HELM_DIR=./sdran-helm-charts
 ${SDRAN_HELM_DIR}:
 	git clone https://github.com/onosproject/sdran-helm-charts.git
 
-bootstrap: ${SDRAN_HELM_CHARTS}
+bootstrap: ${SDRAN_HELM_DIR}
 	cd ${SDRAN_HELM_DIR} && helm dep update aether-roc-umbrella
 
 k3d-cluster-up:
