@@ -1,2 +1,3 @@
-export AETHER_GNMI=/users/smbaker/q3demo/demo-models
-export AETHER_REST=/users/smbaker/q3demo/demo-rest
+export AETHER_GNMI=$(pwd)/demo-models
+export AETHER_REST=$(pwd)/demo-rest
+export AETHER_ROC_API_URL="http://localhost:31190/aether-roc-api"
