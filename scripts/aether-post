@@ -1,0 +1,17 @@
+#!/bin/bash
+WHAT=$1
+FN=$2
+if [ ! -f "$FN" ]; then
+    echo "$FN does not exist. Trying $AETHER_REST/$FN"
+    FN=$AETHER_REST/$FN
+fi
+if [ ! -f "$FN" ]; then
+    echo "$FN does not exist"
+    exit
+fi
+STUFF=`cat $FN`
+
+URL="$AETHER_ROC_API_URL/aether/v1.0.0/spgw-1/$WHAT"
+curl --location --request POST $URL \
+    --header 'Content-Type: application/json' \
+    --data "$STUFF"
