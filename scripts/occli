@@ -1,0 +1,11 @@
+#!/bin/bash
+POD=$(kubectl -n micro-onos get pods -l type=cli --field-selector status.phase=Running -o name)
+if [ $# -eq 0 ]; then
+  kubectl -n micro-onos exec -it $POD -- /bin/sh
+else
+  if [[ "$POD" == *"sdran"* ]]; then
+    kubectl -n micro-onos exec -it $(kubectl -n micro-onos get pods -l type=cli --field-selector status.phase=Running -o name) -- /usr/local/bin/sdran $@
+  else
+    kubectl -n micro-onos exec -it $(kubectl -n micro-onos get pods -l type=cli --field-selector status.phase=Running -o name) -- /usr/local/bin/onos $@
+  fi
+fi
