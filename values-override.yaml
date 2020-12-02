@@ -55,3 +55,7 @@ aether-roc-gui:
     enabled: false
   service:
     type: NodePort
+
+aether-roc-api:
+   corsOrigins:
+   - https://editor.swagger.io
