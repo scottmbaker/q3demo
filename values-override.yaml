@@ -1,3 +1,7 @@
+global:
+  storage:
+    controller: "atomix-controller.micro-onos.svc.cluster.local:5679"
+
 # onos-config:
 #   plugins:
 #     - name: devicesim
