@@ -1,5 +1,7 @@
 # A collection of Makefile targets that are useful for interacting with the ROC
 
+include ./scripts/env.sh
+
 SDRAN_HELM_DIR=./sdran-helm-charts
 
 ${SDRAN_HELM_DIR}:
@@ -7,6 +9,8 @@ ${SDRAN_HELM_DIR}:
 
 bootstrap: ${SDRAN_HELM_DIR}
 	cd ${SDRAN_HELM_DIR} && helm dep update aether-roc-umbrella
+	helm repo add atomix https://charts.atomix.io
+	helm repo update
 
 k3d-cluster-up:
 	k3d cluster list roc-devel || k3d cluster create roc-devel -p "31190:31190@server[0]" -p "31180:31180@server[0]" -p "8080:80@loadbalancer"
@@ -22,7 +26,7 @@ sdcore-adapter-down:
 
 sdcore-adapter-topo:
 	./scripts/waitforpod.sh micro-onos sdcore-adapter
-	./scripts/occli topo add device connectivity-service-v2 --address sdcore-adapter:5150 --role leaf --type Aether --version 2.0.0
+	./scripts/occli topo add device ${SDCORE_TARGET} --address sdcore-adapter:5150 --role leaf --type Aether --version ${AETHER_VERSION}
 
 sdcore-adapter-reinstall: sdcore-adapter-down sdcore-adapter-up
 
@@ -98,8 +102,9 @@ sdcore-reset-oaisim:
 	rm -f /tmp/build/milestones/oaisim
 
 atomix-up:
-	kubectl apply -f https://raw.githubusercontent.com/atomix/kubernetes-controller/master/deploy/atomix-controller.yaml
-	kubectl apply -f https://raw.githubusercontent.com/atomix/raft-storage-controller/master/deploy/raft-storage-controller.yaml && kubectl apply -f https://raw.githubusercontent.com/atomix/cache-storage-controller/master/deploy/cache-storage-controller.yaml
+	kubectl get namespace micro-onos 2> /dev/null || kubectl create namespace micro-onos
+	(helm ls -n micro-onos | grep atomix-controller) || helm -n micro-onos install atomix-controller atomix/atomix-controller --set scope=Namespace
+	(helm ls -n micro-onos | grep raft-storage-controller) || helm -n micro-onos install raft-storage-controller atomix/raft-storage-controller --set scope=Namespace
 
 install-go:
 	curl -L https://golang.org/dl/go1.14.5.linux-amd64.tar.gz -o /tmp/go1.14.5.linux-amd64.tar.gz
