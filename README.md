@@ -24,7 +24,6 @@ make bootstrap       # download the Aether ROC Helm charts and their dependencie
 Here's a simple workflow for bringing up the ROC and populating some sample models:
 
 ```bash
-source env.sh        # set a couple of environment vars
 make k3d-cluster-up  # bring up a single-node k3d cluster
 make aether-up       # install the Aether ROC
 make demo-post       # load some sample models into the ROC

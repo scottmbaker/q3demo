@@ -1,4 +1,8 @@
 #!/bin/bash
+
+SCRIPTDIR=$(dirname $0)
+source $SCRIPTDIR/env.sh
+
 WHAT=$1
 FN=$2
 if [ ! -f "$FN" ]; then
@@ -11,7 +15,7 @@ if [ ! -f "$FN" ]; then
 fi
 STUFF=`cat $FN`
 
-URL="$AETHER_ROC_API_URL/aether/v1.0.0/spgw-1/$WHAT"
+URL="$AETHER_ROC_API_URL/aether/v1.0.0/$SDCORE_TARGET/$WHAT"
 curl --location --request POST $URL \
     --header 'Content-Type: application/json' \
     --data "$STUFF"

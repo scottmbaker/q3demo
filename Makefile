@@ -1,5 +1,7 @@
 # A collection of Makefile targets that are useful for interacting with the ROC
 
+include ./scripts/env.sh
+
 SDRAN_HELM_DIR=./sdran-helm-charts
 
 ${SDRAN_HELM_DIR}:
@@ -24,7 +26,7 @@ sdcore-adapter-down:
 
 sdcore-adapter-topo:
 	./scripts/waitforpod.sh micro-onos sdcore-adapter
-	./scripts/occli topo add device connectivity-service-v2 --address sdcore-adapter:5150 --role leaf --type Aether --version 2.0.0
+	./scripts/occli topo add device ${SDCORE_TARGET} --address sdcore-adapter:5150 --role leaf --type Aether --version ${AETHER_VERSION}
 
 sdcore-adapter-reinstall: sdcore-adapter-down sdcore-adapter-up
 
