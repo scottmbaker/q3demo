@@ -1,7 +1,9 @@
 # Aether ROC Development
 
 This repository contains a Makefile and scripts for conveniently bringing up the Aether ROC
-in a local development environment based on [k3d](https://k3d.io/).
+in a local development environment based on [k3d](https://k3d.io/).  The Aether ROC uses
+[onos-config](https://docs.onosproject.org/onos-config/docs/) to dynamically configure
+and manage [Aether](https://opennetworking.org/aether/).
 
 ## Prerequisites
 
@@ -16,18 +18,25 @@ Install the following tools on your development machine:
 Before bringing up the ROC for the first time, it's necessary to run:
 
 ```bash
-make bootstrap       # download the Aether ROC Helm charts and their dependencies
+make bootstrap            # download the Aether ROC Helm charts and their dependencies
 ```
 
 ## Bringing up the ROC
 
-Here's a simple workflow for bringing up the ROC and populating some sample models:
+Here's a simple workflow for bringing up the ROC locally and populating some sample models:
 
 ```bash
-make k3d-cluster-up  # bring up a single-node k3d cluster
-make aether-up       # install the Aether ROC
-make demo-post       # load some sample models into the ROC
+make k3d-cluster-up       # bring up a single-node k3d cluster
+make aether-up            # install the Aether ROC
+make sdcore-adapter-topo  # connect onos-config to sdcore-adapter
+make demo-post            # load some sample models into the ROC
 ```
+
+At this point you should be able to see the models loaded into the ROC reflected
+in the logs of the `sdcore-adapter` container.  Since the Aether SD-CORE is not
+running in your local environment, there is nothing for the ROC to configure.
+The JSON that would be passed to the SD-CORE in an Aether deployment is just
+written to a file in the `sdcore-adapter` for inspection.
 
 Descriptions of the important Makefile targets can be found in [NOTES.md](NOTES.md).
 
