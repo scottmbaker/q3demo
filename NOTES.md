@@ -1,11 +1,5 @@
 ## Notes on running the demo
 
-Note: Run the following before running any makefile targets.
-
-```bash
-source env.sh
-```
-
 Notable makefile targets:
 
 ```bash

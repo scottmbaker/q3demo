@@ -1,8 +1,5 @@
 #!/bin/bash
 
-SCRIPTDIR=$(dirname $0)
-source $SCRIPTDIR/env.sh
-
 WHAT=$1
 FN=$2
 if [ ! -f "$FN" ]; then
