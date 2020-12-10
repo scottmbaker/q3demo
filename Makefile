@@ -10,6 +10,12 @@ AETHER_ROC_API_URL ?= http://localhost:31190/aether-roc-api
 SDCORE_TARGET ?= spgw-1
 AETHER_VERSION ?= 1.0.0
 
+export AETHER_REST
+export AETHER_GNMI
+export AETHER_ROC_API_URL
+export SDCORE_TARGET
+export AETHER_VERSION
+
 ${SDRAN_HELM_DIR}:
 	git clone https://github.com/onosproject/sdran-helm-charts.git
 
