@@ -66,6 +66,17 @@ def gen_subscriber_models(config_dict):
 config = sys.stdin.read()
 config_dict = json.loads(config)
 
+# Pre-processing for APN profiles
+apn_profiles = {}
+for k, v in config_dict["apn-profiles"].items():
+	apn_profiles[k] = v.copy()
+	for k2, v2 in v.items():
+		if "_" in k2:
+			newkey = k2.replace("_", "-")
+			apn_profiles[k][newkey] = v[k2]
+			del apn_profiles[k][k2]
+config_dict["apn-profiles"] = apn_profiles
+
 # Pre-processing for QOS profiles
 for k, v in config_dict["qos-profiles"].items():
 	config_dict["qos-profiles"][k]["AetherV100targetQosProfileQosProfileApnAmbr"] = {

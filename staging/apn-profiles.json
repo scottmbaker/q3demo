@@ -1,1 +1,1 @@
-{"ListAetherV100targetApnProfileApnProfile": [{"id": "apn-profile1", "apn-name": "internet", "dns_primary": "8.8.8.4", "dns_secondary": "8.8.8.8", "gx_enabled": true, "mtu": 1460, "network": "lbo", "usage": 1}]}
+{"ListAetherV100targetApnProfileApnProfile": [{"id": "apn-profile1", "apn-name": "internet", "mtu": 1460, "network": "lbo", "usage": 1, "dns-primary": "8.8.8.4", "dns-secondary": "8.8.8.8", "gx-enabled": true}]}
