@@ -9,6 +9,8 @@ AETHER_GNMI ?= ${ROOT_DIR}/demo-models
 AETHER_ROC_API_URL ?= http://localhost:31190/aether-roc-api
 SDCORE_TARGET ?= spgw-1
 AETHER_VERSION ?= 1.0.0
+REPO_USER ?= onfstaff
+REPO_PASSWORD ?=
 
 export AETHER_REST
 export AETHER_GNMI
@@ -20,9 +22,10 @@ ${SDRAN_HELM_DIR}:
 	git clone https://github.com/onosproject/sdran-helm-charts.git
 
 bootstrap: ${SDRAN_HELM_DIR}
-	cd ${SDRAN_HELM_DIR} && helm dep update aether-roc-umbrella
+	helm repo add sdran --username ${REPO_USER} --password ${REPO_PASSWORD} https://sdrancharts.onosproject.org
 	helm repo add atomix https://charts.atomix.io
 	helm repo update
+	cd ${SDRAN_HELM_DIR} && helm dep update aether-roc-umbrella
 
 k3d-cluster-up:
 	k3d cluster list roc-devel || k3d cluster create roc-devel --servers ${K3D_SERVERS} --agents ${K3D_AGENTS} -p "31190:31190@server[0]" -p "31180:31180@server[0]" -p "8080:80@loadbalancer"

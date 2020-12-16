@@ -18,8 +18,10 @@ Install the following tools on your development machine:
 Before bringing up the ROC for the first time, it's necessary to run:
 
 ```bash
-make bootstrap            # download the Aether ROC Helm charts and their dependencies
+make bootstrap REPO_PASSWORD=<passwd>    # download the Aether ROC Helm charts and their dependencies
 ```
+
+Replace `<passwd>` above with the actual password for the private SD-RAN Helm Charts repo.
 
 ## Bringing up the ROC
 
