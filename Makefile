@@ -42,11 +42,14 @@ demo-up: aether-up sdcore-adapter-up sdcore-adapter-topo
 demo-down: aether-down sdcore-adapter-down
 
 demo-gnmi:
+	gnmiset set.connectivity-service-demo.gnmi
+	gnmiset set.enterprise.gnmi
 	gnmiset set.access-profile.gnmi
 	gnmiset set.apn-profile.gnmi
 	gnmiset set.qos-profile.gnmi
 	gnmiset set.up-profile.gnmi
-	gnmiset set.subscriber.gnmi
+	gnmiset set.security-profile.gnmi
+	gnmiset set.subscriber-demo.gnmi
 
 demo-post:
 	./scripts/aether-post access-profile access-profile.json
