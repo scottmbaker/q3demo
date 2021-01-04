@@ -33,17 +33,9 @@ k3d-cluster-up:
 k3d-cluster-down:
 	k3d cluster delete roc-devel
 
-sdcore-adapter-up:
-	(helm ls -n micro-onos | grep sdcore-adapter) || helm install -n micro-onos sdcore-adapter ${SDRAN_HELM_DIR}/sdcore-adapter -f sdcore-adapter-override.yaml
-
-sdcore-adapter-down:
-	((helm ls -n micro-onos | grep sdcore-adapter) && helm del -n micro-onos sdcore-adapter) || true
-
 sdcore-adapter-topo:
 	./scripts/waitforpod.sh micro-onos sdcore-adapter
 	./scripts/occli topo add device ${SDCORE_TARGET} --address sdcore-adapter:5150 --role leaf --type Aether --version ${AETHER_VERSION}
-
-sdcore-adapter-reinstall: sdcore-adapter-down sdcore-adapter-up
 
 aether-helm-update: ${SDRAN_HELM_DIR}
 	cp aether-roc-umbrella-chart.yaml ${SDRAN_HELM_DIR}/aether-roc-umbrella/Chart.yaml
@@ -52,13 +44,6 @@ aether-helm-update: ${SDRAN_HELM_DIR}
 aether-up: atomix-up
 	kubectl get namespace micro-onos 2> /dev/null || kubectl create namespace micro-onos
 	(helm ls -n micro-onos | grep aether-roc-umbrella) || helm -n micro-onos install aether-roc-umbrella ${SDRAN_HELM_DIR}/aether-roc-umbrella -f values-override.yaml
-
-aether-down:
-	((helm ls -n micro-onos | grep aether-roc-umbrella) && helm del -n micro-onos aether-roc-umbrella) || true
-
-demo-up: aether-up sdcore-adapter-up sdcore-adapter-topo
-
-demo-down: aether-down sdcore-adapter-down
 
 demo-gnmi:
 	gnmiset set.access-profile.gnmi
@@ -71,47 +56,10 @@ demo-gnmi:
 	#sleep 2s
 	gnmiset set.subscriber.gnmi
 
-demo-post:
-	${ROOT_DIR}/scripts/aether-post access-profile access-profile.json
-	sleep 2s
-	${ROOT_DIR}/scripts/aether-post apn-profile apn-profile.json
-	sleep 2s
-	${ROOT_DIR}/scripts/aether-post qos-profile qos-profile.json
-	sleep 2s
-	${ROOT_DIR}/scripts/aether-post up-profile up-profile.json
-	sleep 2s
-	${ROOT_DIR}/scripts/aether-post up-profile up-profile-wrong.json
-	sleep 2s
-	${ROOT_DIR}/scripts/aether-post subscriber subscriber.json
+demo-post-%:
+	scripts/load-directory.sh ${AETHER_ROC_API_URL}/aether/v$*/${SDCORE_TARGET}/ demo-rest-$*
 
-# Put subscriber_mapping.json in the AETHER_REST directory and
-# then run this.
-# Example: make state-bootstrap AETHER_REST=./staging
-state-bootstrap:
-	cd ${AETHER_REST}; cat ./subscriber_mapping.json | ${ROOT_DIR}/scripts/read-spgw-configs.py
-	${ROOT_DIR}/scripts/aether-post access-profile access-profiles.json
-	sleep 2s
-	${ROOT_DIR}/scripts/aether-post apn-profile apn-profiles.json
-	sleep 2s
-	${ROOT_DIR}/scripts/aether-post qos-profile qos-profiles.json
-	sleep 2s
-	${ROOT_DIR}/scripts/aether-post up-profile user-plane-profiles.json
-	sleep 2s
-	${ROOT_DIR}/scripts/aether-post subscriber subscribers.json
-
-demo-wrong-up:
-	${ROOT_DIR}/scripts/aether-post subscriber subscriber-wrong-up.json
-
-demo-right-up:
-	${ROOT_DIR}/scripts/aether-post subscriber subscriber-right-up.json
-
-demo-disable:
-	${ROOT_DIR}/scripts/aether-post subscriber subscriber-disabled.json
-
-demo-enable:
-	${ROOT_DIR}/scripts/aether-post subscriber subscriber-enabled.json
-
-cleanup:
+aether-down:
 	helm -n micro-onos delete $(shell helm -n micro-onos ls -q)
 
 sdcore-down:

@@ -1,0 +1,30 @@
+{
+    "Ue": [
+        {
+            "Profiles": {
+                "Access-profile": [
+                    {
+                        "access-profile": "profile-access-demo-1",
+                        "allowed": true
+                    }
+                ],
+                "apn-profile": "profile-apn-demo-1",
+                "qos-profile": "profile-qos-demo-1",
+                "security-profile": "profile-security-demo-1",
+                "up-profile": "profile-up-demo-1"
+            },
+            "Serving-plmn": {
+                "mcc": 208,
+                "mnc": 10,
+                "tac": 1
+            },
+            "display-name": "Subscriber Match Rule 1",
+            "enabled": true,
+            "enterprise": "enterprise-demo-1",
+            "id": "5fc0bfc8-4ecc-11eb-b8e7-6f6e6f732d63",
+            "imsi-wildcard": "2??????????????",
+            "priority": 5,
+            "requested-apn": ""
+        }
+    ]
+}

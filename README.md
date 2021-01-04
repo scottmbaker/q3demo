@@ -31,7 +31,7 @@ Here's a simple workflow for bringing up the ROC locally and populating some sam
 make k3d-cluster-up       # bring up a single-node k3d cluster
 make aether-up            # install the Aether ROC
 make sdcore-adapter-topo  # connect onos-config to sdcore-adapter
-make demo-post            # load some sample models into the ROC
+make demo-post-2.0.0      # load some sample models into the ROC
 ```
 
 At this point you should be able to see the models loaded into the ROC reflected
@@ -39,8 +39,6 @@ in the logs of the `sdcore-adapter` container.  Since the Aether SD-CORE is not
 running in your local environment, there is nothing for the ROC to configure.
 The JSON that would be passed to the SD-CORE in an Aether deployment is just
 written to a file in the `sdcore-adapter` for inspection.
-
-Descriptions of the important Makefile targets can be found in [NOTES.md](NOTES.md).
 
 ## Interacting with the ROC
 
