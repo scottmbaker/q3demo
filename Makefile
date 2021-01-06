@@ -8,6 +8,13 @@ ${SDRAN_HELM_DIR}:
 bootstrap: ${SDRAN_HELM_DIR}
 	cd ${SDRAN_HELM_DIR} && helm dep update aether-roc-umbrella
 
+get-gnmi-models:
+	rm -rf /tmp/config-models
+	git clone --single-branch --branch feature/hss http://github.com/sbconsulting/config-models /tmp/config-models
+	cp /tmp/config-models/modelplugin/aether-2.0.0/examples/*.gnmi demo-models/
+	mkdir -p demo-models-v1
+	cp /tmp/config-models/modelplugin/aether-1.0.0/examples/*.gnmi demo-models-v1/
+
 k3d-cluster-up:
 	k3d cluster list roc-devel || k3d cluster create roc-devel -p "31190:31190@server[0]" -p "31180:31180@server[0]" -p "8080:80@loadbalancer"
 
@@ -22,7 +29,11 @@ sdcore-adapter-down:
 
 sdcore-adapter-topo:
 	./scripts/waitforpod.sh micro-onos sdcore-adapter
-	./scripts/occli topo add device connectivity-service-v2 --address sdcore-adapter:5150 --role leaf --type Aether --version 2.0.0
+	# This is now handled by the aether-roc-umbrella chart
+	# ./scripts/occli topo add device connectivity-service-v2 --address sdcore-adapter:5150 --role leaf --type Aether --version 2.0.0
+
+sdcore-adapter-topo-v1:
+	./scripts/occli topo add entity connectivity-service-v1 -k Aether -a address=sdcore-adapter-v1:5150 -a role=leaf -a version=1.0.0 -a tls-insecure=true -a grpcport=5150
 
 sdcore-adapter-reinstall: sdcore-adapter-down sdcore-adapter-up
 
@@ -41,15 +52,24 @@ demo-up: aether-up sdcore-adapter-up sdcore-adapter-topo
 
 demo-down: aether-down sdcore-adapter-down
 
-demo-gnmi:
-	gnmiset set.connectivity-service-demo.gnmi
+demo-gnmi: demo-gnmi-v2
+
+demo-gnmi-v2:
+	gnmiset set.connectivity-service-aib.gnmi
 	gnmiset set.enterprise.gnmi
 	gnmiset set.access-profile.gnmi
 	gnmiset set.apn-profile.gnmi
 	gnmiset set.qos-profile.gnmi
 	gnmiset set.up-profile.gnmi
 	gnmiset set.security-profile.gnmi
-	gnmiset set.subscriber-demo.gnmi
+	gnmiset set.subscriber-aib.gnmi
+
+demo-gnmi-v1:
+	gnmiset demo-models-v1/set.access-profile.gnmi
+	gnmiset demo-models-v1/set.apn-profile.gnmi
+	gnmiset demo-models-v1/set.qos-profile.gnmi
+	gnmiset demo-models-v1/set.up-profile.gnmi
+	gnmiset demo-models-v1/set.subscriber.gnmi
 
 demo-post:
 	./scripts/aether-post access-profile access-profile.json
@@ -113,3 +133,7 @@ install-ksniff:
 	cd ~/ksniff && PATH=$PATH:/usr/local/go/bin make linux 
 	cd ~/ksniff && PATH=$PATH:/usr/local/go/bin make static-tcpdump
 	cd ~/ksniff && sudo make install
+
+clean:
+	rm -rf demo-models-v1/*.gnmi
+	rm -rf demo-models/*.gnmi
