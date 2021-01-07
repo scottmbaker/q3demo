@@ -1,0 +1,15 @@
+{
+    "Enterprise": [
+        {
+            "Connectivity-service": [
+                {
+                    "connectivity-service": "connectivity-service-demo-1",
+                    "enabled": true
+                }
+            ],
+            "description": "Enterprise configuration",
+            "display-name": "Enterprise 1",
+            "id": "enterprise-demo-1"
+        }
+    ]
+}

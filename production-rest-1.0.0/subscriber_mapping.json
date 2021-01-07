@@ -1,0 +1,283 @@
+{
+  "access-profiles": {
+    "access-all": {
+      "type": "allow-all"
+    },
+    "apps-only": {
+      "filter": "only_apps_network",
+      "type": "specific-network"
+    },
+    "excluding-app": {
+      "filter": "exclude-app-name",
+      "type": "excluding-this-app"
+    },
+    "internet-only": {
+      "filter": "No_private_network",
+      "type": "internet-only"
+    },
+    "intranet-only": {
+      "filter": "only_private_network",
+      "type": "intranet-only"
+    },
+    "specific-app": {
+      "filter": "allow-app-name",
+      "type": "specific-destination-only"
+    }
+  },
+  "apn-profiles": {
+    "apn-internet-ciena": {
+      "apn-name": "internet",
+      "dns_primary": "10.24.7.11",
+      "dns_secondary": "1.1.1.1",
+      "gx_enabled": true,
+      "mtu": 1460,
+      "network": "lbo",
+      "usage": 1
+    },
+    "apn-internet-default": {
+      "apn-name": "internet",
+      "dns_primary": "1.1.1.1",
+      "dns_secondary": "8.8.8.8",
+      "gx_enabled": true,
+      "mtu": 1460,
+      "network": "lbo",
+      "usage": 1
+    },
+    "apn-internet-intel": {
+      "apn-name": "internet",
+      "dns_primary": "10.212.74.139",
+      "dns_secondary": "10.212.87.15",
+      "gx_enabled": true,
+      "mtu": 1460,
+      "network": "lbo",
+      "usage": 1
+    },
+    "apn-internet-menlo": {
+      "apn-name": "internet",
+      "dns_primary": "10.53.128.11",
+      "dns_secondary": "1.1.1.1",
+      "gx_enabled": true,
+      "mtu": 1460,
+      "network": "lbo",
+      "usage": 1
+    },
+    "apn-internet-stanford1": {
+      "apn-name": "internet",
+      "dns_primary": "10.65.128.11",
+      "dns_secondary": "1.1.1.1",
+      "gx_enabled": true,
+      "mtu": 1460,
+      "network": "lbo",
+      "usage": 1
+    },
+    "apn-internet-stanford2": {
+      "apn-name": "internet",
+      "dns_primary": "10.67.128.11",
+      "dns_secondary": "1.1.1.1",
+      "gx_enabled": true,
+      "mtu": 1460,
+      "network": "lbo",
+      "usage": 1
+    },
+    "apn-internet-tef": {
+      "apn-name": "internet",
+      "dns_primary": "10.82.128.11",
+      "dns_secondary": "1.1.1.1",
+      "gx_enabled": true,
+      "mtu": 1460,
+      "network": "lbo",
+      "usage": 1
+    },
+    "apn-internet-tucson": {
+      "apn-name": "internet",
+      "dns_primary": "10.59.128.11",
+      "dns_secondary": "1.1.1.1",
+      "gx_enabled": true,
+      "mtu": 1460,
+      "network": "lbo",
+      "usage": 1
+    },
+    "apn-profile1": {
+      "apn-name": "internet",
+      "dns_primary": "8.8.8.4",
+      "dns_secondary": "8.8.8.8",
+      "gx_enabled": true,
+      "mtu": 1460,
+      "network": "lbo",
+      "usage": 1
+    }
+  },
+  "qos-profiles": {
+    "qos-profile1": {
+      "apn-ambr": [
+        12345678,
+        12345678
+      ]
+    }
+  },
+  "subscriber-selection-rules": [
+    {
+      "keys": {
+        "serving-plmn": {
+          "mcc": 315,
+          "mnc": 10,
+          "tac": 222
+        }
+      },
+      "priority": 5,
+      "selected-access-profile": [
+        "access-all"
+      ],
+      "selected-apn-profile": "apn-internet-tucson",
+      "selected-qos-profile": "qos-profile1",
+      "selected-user-plane-profile": "tucson"
+    },
+    {
+      "keys": {
+        "serving-plmn": {
+          "mcc": 999,
+          "mnc": 2,
+          "tac": 1
+        }
+      },
+      "priority": 5,
+      "selected-access-profile": [
+        "access-all"
+      ],
+      "selected-apn-profile": "apn-internet-default",
+      "selected-qos-profile": "qos-profile1",
+      "selected-user-plane-profile": "ntt"
+    },
+    {
+      "keys": {
+        "serving-plmn": {
+          "mcc": 315,
+          "mnc": 10,
+          "tac": 5
+        }
+      },
+      "priority": 5,
+      "selected-access-profile": [
+        "access-all"
+      ],
+      "selected-apn-profile": "apn-internet-ciena",
+      "selected-qos-profile": "qos-profile1",
+      "selected-user-plane-profile": "ciena"
+    },
+    {
+      "keys": {
+        "serving-plmn": {
+          "mcc": 315,
+          "mnc": 10,
+          "tac": 101
+        }
+      },
+      "priority": 5,
+      "selected-access-profile": [
+        "access-all"
+      ],
+      "selected-apn-profile": "apn-internet-intel",
+      "selected-qos-profile": "qos-profile1",
+      "selected-user-plane-profile": "intel"
+    },
+    {
+      "keys": {
+        "serving-plmn": {
+          "mcc": 315,
+          "mnc": 10,
+          "tac": 203
+        }
+      },
+      "priority": 5,
+      "selected-access-profile": [
+        "access-all"
+      ],
+      "selected-apn-profile": "apn-internet-menlo",
+      "selected-qos-profile": "qos-profile1",
+      "selected-user-plane-profile": "menlo"
+    },
+    {
+      "keys": {
+        "serving-plmn": {
+          "mcc": 722,
+          "mnc": 7,
+          "tac": 110
+        }
+      },
+      "priority": 5,
+      "selected-access-profile": [
+        "access-all"
+      ],
+      "selected-apn-profile": "apn-internet-tef",
+      "selected-qos-profile": "qos-profile1",
+      "selected-user-plane-profile": "tef"
+    },
+    {
+      "keys": {
+        "serving-plmn": {
+          "mcc": 315,
+          "mnc": 10,
+          "tac": 603
+        }
+      },
+      "priority": 5,
+      "selected-access-profile": [
+        "access-all"
+      ],
+      "selected-apn-profile": "apn-internet-stanford2",
+      "selected-qos-profile": "qos-profile1",
+      "selected-user-plane-profile": "stanford2"
+    },
+    {
+      "keys": {
+        "serving-plmn": {
+          "mcc": 315,
+          "mnc": 10,
+          "tac": 601
+        }
+      },
+      "priority": 5,
+      "selected-access-profile": [
+        "access-all"
+      ],
+      "selected-apn-profile": "apn-internet-stanford1",
+      "selected-qos-profile": "qos-profile1",
+      "selected-user-plane-profile": "stanford1"
+    }
+  ],
+  "user-plane-profiles": {
+    "ciena": {
+      "user-plane": "pfcp-agent.omec.svc.prd.ciena.aetherproject.net"
+    },
+    "intel": {
+      "user-plane": "upf.omec.svc.prd.intel.aetherproject.net"
+    },
+    "menlo": {
+      "user-plane": "pfcp-agent.omec.svc.prd.menlo.aetherproject.net"
+    },
+    "ntt": {
+      "user-plane": "upf.omec.svc.prd.ntt.aetherproject.net"
+    },
+    "stanford1": {
+      "user-plane": "pfcp-agent.omec.svc.prd.stanford1.aetherproject.net"
+    },
+    "stanford2": {
+      "user-plane": "pfcp-agent.omec.svc.prd.stanford2.aetherproject.net"
+    },
+    "tef": {
+      "user-plane": "upf.omec.svc.prd.tef.aetherproject.net"
+    },
+    "tucson": {
+      "user-plane": "upf.omec.svc.prd.tucson.aetherproject.net"
+    },
+    "user-plane1": {
+      "access-tags": {
+        "tag1": "ACC"
+      },
+      "qos-tags": {
+        "tag1": "BW"
+      },
+      "user-plane": "upf"
+    }
+  }
+}

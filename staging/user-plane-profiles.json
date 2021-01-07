@@ -1,0 +1,1 @@
+{"ListAetherV100targetUpProfileUpProfile": [{"id": "user-plane1", "access-tags": {"tag1": "ACC"}, "qos-tags": {"tag1": "BW"}, "user-plane": "upf"}]}

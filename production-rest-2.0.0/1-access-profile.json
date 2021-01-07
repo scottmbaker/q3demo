@@ -1,0 +1,46 @@
+{
+  "Access-profile": [
+    {
+      "description": "access profile that only allows access to the apps network",
+      "display-name": "Only Apps Network",
+      "filter": "only_apps_network",
+      "id": "apps-only",
+      "type": "specific-network"
+    },
+    {
+      "description": "exclude an app from contacting a specific destination",
+      "display-name": "Exclude App By Name",
+      "filter": "exclude-app-name",
+      "id": "excluding-app",
+      "type": "excluding-this-app"
+    },
+    {
+      "description": "access profile that allows Internet access only",
+      "display-name": "Internet Access Only",
+      "filter": "No_private_network",
+      "id": "internet-only",
+      "type": "internet-only"
+    },
+    {
+      "description": "access profile that allows intranet access only",
+      "display-name": "Private Network Only",
+      "filter": "only_private_network",
+      "id": "intranet-only",
+      "type": "intranet-only"
+    },
+    {
+      "description": "allow an app to contact a specific destination",
+      "display-name": "Allow App By Name",
+      "filter": "allow-app-name",
+      "id": "specific-app",
+      "type": "specific-destination-only"
+    },
+    {
+      "description": "access profile that allows all access",
+      "display-name": "Access All",
+      "filter": "null",
+      "id": "access-all",
+      "type": "allow-all"
+    }
+  ]
+}

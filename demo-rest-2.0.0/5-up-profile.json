@@ -1,0 +1,11 @@
+{
+    "Up-profile": [
+        {
+            "access-control": "none",
+            "description": "user-plane profile for spgwu1",
+            "display-name": "UP Profile 1",
+            "id": "profile-up-demo-1",
+            "user-plane": "upf-headless"
+        }
+    ]
+}
