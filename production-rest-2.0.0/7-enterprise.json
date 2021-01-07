@@ -1,0 +1,92 @@
+{
+    "Enterprise": [
+        {
+            "Connectivity-service": [
+                {
+                    "connectivity-service": "connectivity-service-v1",
+                    "enabled": true
+                }
+            ],
+            "description": "Aether - Open Networking Foundation",
+            "display-name": "Aether - ONF",
+            "id": "aether-onf"
+        },
+        {
+            "Connectivity-service": [
+                {
+                    "connectivity-service": "connectivity-service-v1",
+                    "enabled": true
+                }
+            ],
+            "description": "Aether - Ciena",
+            "display-name": "Aether - Ciena",
+            "id": "aether-ciena"
+        },
+        {
+            "Connectivity-service": [
+                {
+                    "connectivity-service": "connectivity-service-v1",
+                    "enabled": true
+                }
+            ],
+            "description": "Aether - Intel",
+            "display-name": "Aether - Intel",
+            "id": "aether-intel"
+        },
+        {
+            "Connectivity-service": [
+                {
+                    "connectivity-service": "connectivity-service-v1",
+                    "enabled": true
+                }
+            ],
+            "description": "Aether - NTT",
+            "display-name": "Aether - NTT",
+            "id": "aether-ntt"
+        },
+        {
+            "Connectivity-service": [
+                {
+                    "connectivity-service": "connectivity-service-v1",
+                    "enabled": true
+                }
+            ],
+            "description": "Aether - Telefonica",
+            "display-name": "Aether - Telefonica",
+            "id": "aether-tef"
+        },
+        {
+            "Connectivity-service": [
+                {
+                    "connectivity-service": "connectivity-service-v1",
+                    "enabled": true
+                }
+            ],
+            "description": "Pronto - Cornell",
+            "display-name": "Pronto - Cornell",
+            "id": "pronto-cornell"
+        },
+        {
+            "Connectivity-service": [
+                {
+                    "connectivity-service": "connectivity-service-v1",
+                    "enabled": true
+                }
+            ],
+            "description": "Pronto - Princeton",
+            "display-name": "Pronto - Princeton",
+            "id": "pronto-princeton"
+        },
+        {
+            "Connectivity-service": [
+                {
+                    "connectivity-service": "connectivity-service-v1",
+                    "enabled": true
+                }
+            ],
+            "description": "Pronto - Stanford",
+            "display-name": "Pronto - Stanford",
+            "id": "pronto-stanford"
+        }
+    ]
+}

@@ -1,0 +1,114 @@
+{
+  "Apn-profile": [
+    {
+      "apn-name": "internet",
+      "description": "Stanford1 Internet APN config",
+      "display-name": "Stanford1 Internet",
+      "dns-primary": "10.65.128.11",
+      "dns-secondary": "1.1.1.1",
+      "gx-enabled": true,
+      "id": "apn-internet-stanford1",
+      "mtu": 1460
+    },
+    {
+      "apn-name": "internet",
+      "description": "Stanford2 Internet APN config",
+      "display-name": "Stanford2 Internet",
+      "dns-primary": "10.67.128.11",
+      "dns-secondary": "1.1.1.1",
+      "gx-enabled": true,
+      "id": "apn-internet-stanford2",
+      "mtu": 1460
+    },
+    {
+      "apn-name": "internet",
+      "description": "Cornell1 Internet APN config",
+      "display-name": "Cornell1 Internet",
+      "dns-primary": "10.68.128.11",
+      "dns-secondary": "1.1.1.1",
+      "gx-enabled": true,
+      "id": "apn-internet-cornell1",
+      "mtu": 1460
+    },
+    {
+      "apn-name": "internet",
+      "description": "Princeton1 Internet APN config",
+      "display-name": "Princeton1 Internet",      
+      "dns-primary": "10.70.128.11",
+      "dns-secondary": "1.1.1.1",
+      "gx-enabled": true,
+      "id": "apn-internet-princeton1",
+      "mtu": 1460
+    },
+    {
+      "apn-name": "internet",
+      "description": "ONF Tucson Internet APN config",
+      "display-name": "ONF Tucson Internet",
+      "dns-primary": "10.59.128.11",
+      "dns-secondary": "1.1.1.1",
+      "gx-enabled": true,
+      "id": "apn-internet-tucson",
+      "mtu": 1460
+    },
+    {
+      "apn-name": "internet",
+      "description": "the default APN profile",
+      "display-name": "APN Profile 1",
+      "dns-primary": "8.8.8.4",
+      "dns-secondary": "8.8.8.8",
+      "gx-enabled": true,
+      "id": "apn-profile1",
+      "mtu": 1460
+    },
+    {
+      "apn-name": "internet",
+      "description": "Telefonica Internet APN config",
+      "display-name": "Telefonica Internet",
+      "dns-primary": "10.82.128.11",
+      "dns-secondary": "1.1.1.1",
+      "gx-enabled": true,
+      "id": "apn-internet-tef",
+      "mtu": 1460
+    },
+    {
+      "apn-name": "internet",
+      "description": "Ciena Internet APN config",
+      "display-name": "Ciena Internet",
+      "dns-primary": "10.24.7.11",
+      "dns-secondary": "1.1.1.1",
+      "gx-enabled": true,
+      "id": "apn-internet-ciena",
+      "mtu": 1460
+    },
+    {
+      "apn-name": "internet",
+      "description": "Default Internet APN config",
+      "display-name": "Default Internet",
+      "dns-primary": "1.1.1.1",
+      "dns-secondary": "8.8.8.8",
+      "gx-enabled": true,
+      "id": "apn-internet-default",
+      "mtu": 1460
+    },
+    {
+      "apn-name": "internet",
+      "description": "Intel Internet APN config",
+      "display-name": "Intel Internet",
+      "dns-primary": "10.212.74.139",
+      "dns-secondary": "10.212.87.15",
+      "gx-enabled": true,
+      "id": "apn-internet-intel",
+      "mtu": 1460
+    },
+    {
+      "apn-name": "internet",
+      "description": "ONF Menlo Internet APN config",
+      "display-name": "ONF Menlo Internet",
+      "dns-primary": "10.53.128.11",
+      "dns-secondary": "1.1.1.1",
+      "gx-enabled": true,
+      "id": "apn-internet-menlo",
+      "mtu": 1460
+    }
+  ]
+}

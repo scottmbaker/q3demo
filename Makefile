@@ -59,6 +59,9 @@ demo-gnmi:
 demo-post-%:
 	scripts/load-directory.sh ${AETHER_ROC_API_URL}/aether/v$*/${SDCORE_TARGET}/ demo-rest-$*
 
+post-production-%:
+	scripts/load-directory.sh ${AETHER_ROC_API_URL}/aether/v$*/${SDCORE_TARGET}/ production-rest-$*
+
 aether-down:
 	helm -n micro-onos delete $(shell helm -n micro-onos ls -q)
 

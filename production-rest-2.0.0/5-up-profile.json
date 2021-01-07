@@ -1,0 +1,74 @@
+{
+  "Up-profile": [
+    {
+      "access-control": "none",
+      "description": "User plane profile for Stanford1",
+      "display-name": "Stanford1",
+      "id": "stanford1",
+      "user-plane": "pfcp-agent.omec.svc.prd.stanford1.aetherproject.net"
+    },
+    {
+      "access-control": "none",
+      "description": "User plane profile for Stanford2",
+      "display-name": "Stanford2",
+      "id": "stanford2",
+      "user-plane": "pfcp-agent.omec.svc.prd.stanford2.aetherproject.net"
+    },
+    {
+      "access-control": "none",
+      "description": "User plane profile for Cornell1",
+      "display-name": "Cornell1",
+      "id": "cornell1",
+      "user-plane": "pfcp-agent.omec.svc.prd.cornell1.aetherproject.net"
+    },
+    {
+      "access-control": "none",
+      "description": "User plane profile for Princeton1",
+      "display-name": "Princeton1",
+      "id": "princeton1",
+      "user-plane": "pfcp-agent.omec.svc.prd.princeton1.aetherproject.net"
+    },
+    {
+      "access-control": "none",
+      "description": "User plane profile for Telefonica",
+      "display-name": "Telefonica",
+      "id": "tef",
+      "user-plane": "upf.omec.svc.prd.tef.aetherproject.net"
+    },
+    {
+      "access-control": "none",
+      "description": "User plane profile for ONF Tucson",
+      "display-name": "ONF Tucson",
+      "id": "tucson",
+      "user-plane": "upf.omec.svc.prd.tucson.aetherproject.net"
+    },
+    {
+      "access-control": "none",
+      "description": "User plane profile for Ciena",
+      "display-name": "Ciena",
+      "id": "ciena",
+      "user-plane": "pfcp-agent.omec.svc.prd.ciena.aetherproject.net"
+    },
+    {
+      "access-control": "none",
+      "description": "User plane profile for Intel",
+      "display-name": "Intel",
+      "id": "intel",
+      "user-plane": "upf.omec.svc.prd.intel.aetherproject.net"
+    },
+    {
+      "access-control": "none",
+      "description": "User plane profile for ONF Menlo",
+      "display-name": "ONF Menlo",
+      "id": "menlo",
+      "user-plane": "pfcp-agent.omec.svc.prd.menlo.aetherproject.net"
+    },
+    {
+      "access-control": "none",
+      "description": "User plane profile for NTT",
+      "display-name": "NTT",
+      "id": "ntt",
+      "user-plane": "upf.omec.svc.prd.ntt.aetherproject.net"
+    }
+  ]
+}

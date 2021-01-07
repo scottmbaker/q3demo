@@ -1,0 +1,244 @@
+{
+  "Ue": [
+    {
+      "display-name": "ONF Tucson subscriber match rule",
+      "enabled": true,
+      "enterprise": "aether-onf",
+      "id": "cbdb20c1-c3d7-47e3-a1a1-7465c8ad6ff1",
+      "priority": 5,
+      "Profiles": {
+        "apn-profile": "apn-internet-tucson",
+        "qos-profile": "qos-profile1",
+        "security-profile": "profile-security-demo-1",
+        "up-profile": "tucson",
+        "Access-profile": [
+          {
+            "access-profile": "access-all",
+            "allowed": true
+          }
+        ]
+      },
+      "Serving-plmn": {
+        "mcc": 315,
+        "mnc": 10,
+        "tac": 222
+      }
+    },
+    {
+      "display-name": "NTT subscriber match rule",
+      "enabled": true,
+      "enterprise": "aether-ntt",
+      "id": "e8b4f8ea-cd9c-4ae7-a1df-15ee82cc4dc6",
+      "priority": 5,
+      "Profiles": {
+        "apn-profile": "apn-internet-default",
+        "qos-profile": "qos-profile1",
+        "security-profile": "profile-security-demo-1",
+        "up-profile": "ntt",
+        "Access-profile": [
+          {
+            "access-profile": "access-all",
+            "allowed": true
+          }
+        ]
+      },
+      "Serving-plmn": {
+        "mcc": 999,
+        "mnc": 2,
+        "tac": 1
+      }
+    },
+    {
+      "display-name": "Ciena subscriber match rule",
+      "enabled": true,
+      "enterprise": "aether-ciena",
+      "id": "4c814a64-c592-468e-9435-b60f225f97ff",
+      "priority": 5,
+      "Profiles": {
+        "apn-profile": "apn-internet-ciena",
+        "qos-profile": "qos-profile1",
+        "security-profile": "profile-security-demo-1",
+        "up-profile": "ciena",
+        "Access-profile": [
+          {
+            "access-profile": "access-all",
+            "allowed": true
+          }
+        ]
+      },
+      "Serving-plmn": {
+        "mcc": 315,
+        "mnc": 10,
+        "tac": 5
+      }
+    },
+    {
+      "display-name": "Intel subscriber match rule",
+      "enabled": true,
+      "enterprise": "aether-intel",
+      "id": "c6711eb4-5210-4d94-b83c-0f890dc21c31",
+      "priority": 5,
+      "Profiles": {
+        "apn-profile": "apn-internet-intel",
+        "qos-profile": "qos-profile1",
+        "security-profile": "profile-security-demo-1",
+        "up-profile": "intel",
+        "Access-profile": [
+          {
+            "access-profile": "access-all",
+            "allowed": true
+          }
+        ]
+      },
+      "Serving-plmn": {
+        "mcc": 315,
+        "mnc": 10,
+        "tac": 101
+      }
+    },
+    {
+      "display-name": "ONF Menlo subscriber match rule",
+      "enabled": true,
+      "enterprise": "aether-onf",
+      "id": "f2ba8cc0-e593-403b-a130-f18a99018f6e",
+      "priority": 5,
+      "Profiles": {
+        "apn-profile": "apn-internet-menlo",
+        "qos-profile": "qos-profile1",
+        "security-profile": "profile-security-demo-1",
+        "up-profile": "menlo",
+        "Access-profile": [
+          {
+            "access-profile": "access-all",
+            "allowed": true
+          }
+        ]
+      },
+      "Serving-plmn": {
+        "mcc": 315,
+        "mnc": 10,
+        "tac": 203
+      }
+    },
+    {
+      "display-name": "Telefonica subscriber match rule",
+      "enabled": true,
+      "enterprise": "aether-tef",
+      "id": "0debf047-8416-4539-9abf-02a0d7e7f9a3",
+      "priority": 5,
+      "Profiles": {
+        "apn-profile": "apn-internet-tef",
+        "qos-profile": "qos-profile1",
+        "security-profile": "profile-security-demo-1",
+        "up-profile": "tef",
+        "Access-profile": [
+          {
+            "access-profile": "access-all",
+            "allowed": true
+          }
+        ]
+      },
+      "Serving-plmn": {
+        "mcc": 722,
+        "mnc": 7,
+        "tac": 110
+      }
+    },
+    {
+      "display-name": "Cornell1 subscriber match rule",
+      "enabled": true,
+      "enterprise": "pronto-cornell",
+      "id": "554b4c5b-de49-4868-ba7e-f428aefc0984",
+      "priority": 5,
+      "Profiles": {
+        "apn-profile": "apn-internet-cornell1",
+        "qos-profile": "qos-profile1",
+        "security-profile": "profile-security-demo-1",
+        "up-profile": "cornell1",
+        "Access-profile": [
+          {
+            "access-profile": "access-all",
+            "allowed": true
+          }
+        ]
+      },
+      "Serving-plmn": {
+        "mcc": 315,
+        "mnc": 10,
+        "tac": 607
+      }
+    },
+    {
+      "display-name": "Princeton1 subscriber match rule",
+      "enabled": true,
+      "enterprise": "pronto-princeton",
+      "id": "30f77900-18b1-480c-a419-031956d83a9c",
+      "priority": 5,
+      "Profiles": {
+        "apn-profile": "apn-internet-princeton1",
+        "qos-profile": "qos-profile1",
+        "security-profile": "profile-security-demo-1",
+        "up-profile": "princeton1",
+        "Access-profile": [
+          {
+            "access-profile": "access-all",
+            "allowed": true
+          }
+        ]
+      },
+      "Serving-plmn": {
+        "mcc": 315,
+        "mnc": 10,
+        "tac": 605
+      }
+    },
+    {
+      "display-name": "Stanford2 subscriber match rule",
+      "enabled": true,
+      "enterprise": "pronto-stanford",
+      "id": "1c6852e6-5b12-413a-9fa5-c631c644136c",
+      "priority": 5,
+      "Profiles": {
+        "apn-profile": "apn-internet-stanford2",
+        "qos-profile": "qos-profile1",
+        "security-profile": "profile-security-demo-1",
+        "up-profile": "stanford2",
+        "Access-profile": [
+          {
+            "access-profile": "access-all",
+            "allowed": true
+          }
+        ]
+      },
+      "Serving-plmn": {
+        "mcc": 315,
+        "mnc": 10,
+        "tac": 603
+      }
+    },
+    {
+      "display-name": "Stanford1 subscriber match rule",
+      "enabled": true,
+      "enterprise": "pronto-stanford",
+      "id": "415d0496-6926-4a49-b0f1-69ef1742fd5d",
+      "priority": 5,
+      "Profiles": {
+        "apn-profile": "apn-internet-stanford1",
+        "qos-profile": "qos-profile1",
+        "security-profile": "profile-security-demo-1",
+        "up-profile": "stanford1",
+        "Access-profile": [
+          {
+            "access-profile": "access-all",
+            "allowed": true
+          }
+        ]
+      },
+      "Serving-plmn": {
+        "mcc": 315,
+        "mnc": 10,
+        "tac": 601
+      }
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+    "Connectivity-service": [
+        {
+            "description": "Connectivity service v1 endpoints",
+            "display-name": "Connectivity Service v1",
+            "hss-endpoint": "http://hss.omec:8080/v1/config",
+            "id": "connectivity-service-v1",
+            "spgwc-endpoint": "http://spgwc.omec:8080/v1/config"
+        }
+    ]
+}
