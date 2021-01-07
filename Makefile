@@ -34,6 +34,13 @@ get-gnmi-models:
 	mkdir -p demo-models-v1
 	cp /tmp/config-models/modelplugin/aether-1.0.0/examples/*.gnmi demo-models-v1/
 
+get-gnmi-models:
+	rm -rf /tmp/config-models
+	git clone --single-branch --branch feature/hss http://github.com/sbconsulting/config-models /tmp/config-models
+	cp /tmp/config-models/modelplugin/aether-2.0.0/examples/*.gnmi demo-models/
+	mkdir -p demo-models-v1
+	cp /tmp/config-models/modelplugin/aether-1.0.0/examples/*.gnmi demo-models-v1/
+
 k3d-cluster-up:
 	k3d cluster list roc-devel || k3d cluster create roc-devel --servers ${K3D_SERVERS} --agents ${K3D_AGENTS} -p "31190:31190@server[0]" -p "31180:31180@server[0]" -p "8080:80@loadbalancer"
 
