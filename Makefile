@@ -27,6 +27,13 @@ bootstrap: ${SDRAN_HELM_DIR}
 	helm repo update
 	cd ${SDRAN_HELM_DIR} && helm dep update aether-roc-umbrella
 
+get-gnmi-models:
+	rm -rf /tmp/config-models
+	git clone --single-branch --branch feature/hss http://github.com/sbconsulting/config-models /tmp/config-models
+	cp /tmp/config-models/modelplugin/aether-2.0.0/examples/*.gnmi demo-models/
+	mkdir -p demo-models-v1
+	cp /tmp/config-models/modelplugin/aether-1.0.0/examples/*.gnmi demo-models-v1/
+
 k3d-cluster-up:
 	k3d cluster list roc-devel || k3d cluster create roc-devel --servers ${K3D_SERVERS} --agents ${K3D_AGENTS} -p "31190:31190@server[0]" -p "31180:31180@server[0]" -p "8080:80@loadbalancer"
 
@@ -35,7 +42,11 @@ k3d-cluster-down:
 
 sdcore-adapter-topo:
 	./scripts/waitforpod.sh micro-onos sdcore-adapter
-	./scripts/occli topo add device ${SDCORE_TARGET} --address sdcore-adapter:5150 --role leaf --type Aether --version ${AETHER_VERSION}
+	# This is now handled by the aether-roc-umbrella chart
+	# ./scripts/occli topo add device ${SDCORE_TARGET} --address sdcore-adapter:5150 --role leaf --type Aether --version ${AETHER_VERSION}
+
+sdcore-adapter-topo-v1:
+	./scripts/occli topo add entity connectivity-service-v1 -k Aether -a address=sdcore-adapter-v1:5150 -a role=leaf -a version=1.0.0 -a tls-insecure=true -a grpcport=5150
 
 aether-helm-update: ${SDRAN_HELM_DIR}
 	cp aether-roc-umbrella-chart.yaml ${SDRAN_HELM_DIR}/aether-roc-umbrella/Chart.yaml
@@ -45,16 +56,28 @@ aether-up: atomix-up
 	kubectl get namespace micro-onos 2> /dev/null || kubectl create namespace micro-onos
 	(helm ls -n micro-onos | grep aether-roc-umbrella) || helm -n micro-onos install aether-roc-umbrella ${SDRAN_HELM_DIR}/aether-roc-umbrella -f values-override.yaml
 
-demo-gnmi:
+demo-up: aether-up sdcore-adapter-up sdcore-adapter-topo
+
+demo-down: aether-down sdcore-adapter-down
+
+demo-gnmi: demo-gnmi-v2
+
+demo-gnmi-v2:
+	gnmiset set.connectivity-service-aib.gnmi
+	gnmiset set.enterprise.gnmi
 	gnmiset set.access-profile.gnmi
-	#sleep 2s
 	gnmiset set.apn-profile.gnmi
-	#sleep 2s
 	gnmiset set.qos-profile.gnmi
-	#sleep 2s
 	gnmiset set.up-profile.gnmi
-	#sleep 2s
-	gnmiset set.subscriber.gnmi
+	gnmiset set.security-profile.gnmi
+	gnmiset set.subscriber-aib.gnmi
+
+demo-gnmi-v1:
+	gnmiset demo-models-v1/set.access-profile.gnmi
+	gnmiset demo-models-v1/set.apn-profile.gnmi
+	gnmiset demo-models-v1/set.qos-profile.gnmi
+	gnmiset demo-models-v1/set.up-profile.gnmi
+	gnmiset demo-models-v1/set.subscriber.gnmi
 
 demo-post-%:
 	scripts/load-directory.sh ${AETHER_ROC_API_URL}/aether/v$*/${SDCORE_TARGET}/ demo-rest-$*
@@ -63,7 +86,7 @@ post-production-%:
 	scripts/load-directory.sh ${AETHER_ROC_API_URL}/aether/v$*/${SDCORE_TARGET}/ production-rest-$*
 
 aether-down:
-	helm -n micro-onos delete $(shell helm -n micro-onos ls -q)
+	helm -n micro-onos delete $(shell helm -n micro-onos ls -q) || true
 
 sdcore-down:
 	cd ~/aether-in-a-box && make reset-test
@@ -101,3 +124,7 @@ install-ksniff:
 	cd ~/ksniff && PATH=$PATH:/usr/local/go/bin make linux 
 	cd ~/ksniff && PATH=$PATH:/usr/local/go/bin make static-tcpdump
 	cd ~/ksniff && sudo make install
+
+clean:
+	rm -rf demo-models-v1/*.gnmi
+	rm -rf demo-models/*.gnmi
