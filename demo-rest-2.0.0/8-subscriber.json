@@ -22,9 +22,9 @@
             "enabled": true,
             "enterprise": "enterprise-demo-1",
             "id": "5fc0bfc8-4ecc-11eb-b8e7-6f6e6f732d63",
-            "imsi-wildcard": "2??????????????",
-            "priority": 5,
-            "requested-apn": ""
+            "imsi-range-from": 208014567891200,
+            "imsi-range-to": 208014567891300,
+            "priority": 5
         }
     ]
 }
