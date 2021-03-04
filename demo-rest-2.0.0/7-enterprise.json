@@ -1,7 +1,7 @@
 {
-    "Enterprise": [
+    "enterprise": [
         {
-            "Connectivity-service": [
+            "connectivity-service": [
                 {
                     "connectivity-service": "connectivity-service-demo-1",
                     "enabled": true

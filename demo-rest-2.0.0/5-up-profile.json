@@ -1,5 +1,5 @@
 {
-    "Up-profile": [
+    "up-profile": [
         {
             "access-control": "none",
             "description": "user-plane profile for spgwu1",

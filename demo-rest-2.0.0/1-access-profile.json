@@ -1,5 +1,5 @@
 {
-    "Access-profile": [
+    "access-profile": [
         {
             "description": "access profile that allows internet only",
             "display-name": "Access Profile 1",

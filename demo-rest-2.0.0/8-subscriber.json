@@ -1,8 +1,8 @@
 {
-    "Ue": [
+    "ue": [
         {
-            "Profiles": {
-                "Access-profile": [
+            "profiles": {
+                "access-profile": [
                     {
                         "access-profile": "profile-access-demo-1",
                         "allowed": true
@@ -13,7 +13,7 @@
                 "security-profile": "profile-security-demo-1",
                 "up-profile": "profile-up-demo-1"
             },
-            "Serving-plmn": {
+            "serving-plmn": {
                 "mcc": 208,
                 "mnc": 10,
                 "tac": 1

@@ -1,5 +1,5 @@
 {
-    "Connectivity-service": [
+    "connectivity-service": [
         {
             "description": "Connectivity service endpoints",
             "display-name": "Connectivity Service 1",

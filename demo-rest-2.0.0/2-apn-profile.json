@@ -1,5 +1,5 @@
 {
-    "Apn-profile": [
+    "apn-profile": [
         {
             "apn-name": "internet",
             "description": "the default APN profile",

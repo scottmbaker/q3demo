@@ -1,7 +1,7 @@
 {
-    "Qos-profile": [
+    "qos-profile": [
         {
-            "Apn-ambr": {
+            "apn-ambr": {
                 "downlink": 12345678,
                 "uplink": 12345678
             },
