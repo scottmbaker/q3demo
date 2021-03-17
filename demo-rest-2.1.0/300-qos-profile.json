@@ -1,0 +1,13 @@
+{
+    "qos-profile": [
+        {
+            "apn-ambr": {
+                "downlink": 12345678,
+                "uplink": 12345678
+            },
+            "description": "qos profile for demo",
+            "display-name": "QOS Profile 1",
+            "id": "profile-qos-demo-1"
+        }
+    ]
+}

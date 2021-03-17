@@ -1,0 +1,12 @@
+{
+    "security-profile": [
+        {
+            "description": "security profile for demo",
+            "display-name": "Security Profile 1",
+            "id": "profile-security-demo-1",
+            "key": "465b5ce8b199b49faa5f0a2ee238a6bc",
+            "opc": "d4416644f6154936193433dd20a0ace0",
+            "sqn": 96
+        }
+    ]
+}

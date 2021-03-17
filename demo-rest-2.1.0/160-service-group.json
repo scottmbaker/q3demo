@@ -1,0 +1,12 @@
+{
+    "service-group": [
+        {
+            "id": "internet",
+            "services": [
+                {"service": "be-internet-access",
+                 "kind": "default"}                
+            ],
+            "description": "Internet service"
+        }
+    ]
+}
