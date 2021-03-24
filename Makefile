@@ -115,9 +115,10 @@ sdcore-reset-oaisim:
 	rm -f /tmp/build/milestones/oaisim
 
 atomix-up:
+	# create the micro-onos namespace here, leftover from when I used to install atomix to micro-onos
 	kubectl get namespace micro-onos 2> /dev/null || kubectl create namespace micro-onos
-	(helm ls -n micro-onos | grep atomix-controller) || helm -n micro-onos install atomix-controller atomix/atomix-controller --set scope=Namespace
-	(helm ls -n micro-onos | grep raft-storage-controller) || helm -n micro-onos install raft-storage-controller atomix/raft-storage-controller --set scope=Namespace
+	(helm ls -n kube-system | grep atomix-controller) || helm -n kube-system install atomix-controller atomix/atomix-controller --set scope=Namespace
+	(helm ls -n kube-system | grep raft-storage-controller) || helm -n kube-system install raft-storage-controller atomix/raft-storage-controller --set scope=Namespace
 
 install-go:
 	curl -L https://golang.org/dl/go1.14.5.linux-amd64.tar.gz -o /tmp/go1.14.5.linux-amd64.tar.gz
