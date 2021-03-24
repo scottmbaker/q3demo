@@ -27,6 +27,9 @@ bootstrap: ${SDRAN_HELM_DIR}
 	helm repo update
 	cd ${SDRAN_HELM_DIR} && helm dep update aether-roc-umbrella
 
+operator-up:
+	(kubectl -n kube-system get pods | grep config-operator) || kubectl create -f https://raw.githubusercontent.com/onosproject/onos-operator/v0.4.1/deploy/onos-operator.yaml
+
 get-gnmi-models:
 	rm -rf /tmp/config-models
 	git clone --single-branch --branch feature/hss http://github.com/sbconsulting/config-models /tmp/config-models
@@ -52,7 +55,7 @@ aether-helm-update: ${SDRAN_HELM_DIR}
 	cp aether-roc-umbrella-chart.yaml ${SDRAN_HELM_DIR}/aether-roc-umbrella/Chart.yaml
 	cd ${SDRAN_HELM_DIR} && helm dep update aether-roc-umbrella
 
-aether-up: atomix-up
+aether-up: atomix-up operator-up
 	kubectl get namespace micro-onos 2> /dev/null || kubectl create namespace micro-onos
 	(helm ls -n micro-onos | grep aether-roc-umbrella) || helm -n micro-onos install aether-roc-umbrella ${SDRAN_HELM_DIR}/aether-roc-umbrella -f values-override.yaml
         # --set onos-config.openidc.issuer=https://dex.aetherproject.org/dex --set aether-roc-gui.openidc.issuer=https://dex.aetherproject.org/dex
