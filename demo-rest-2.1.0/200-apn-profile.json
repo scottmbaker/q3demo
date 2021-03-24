@@ -8,7 +8,8 @@
             "dns-secondary": "8.8.8.8",
             "gx-enabled": true,
             "id": "profile-apn-demo-1",
-            "mtu": 1460
+            "mtu": 1460,
+            "service-group": "internet"
         }
     ]
 }

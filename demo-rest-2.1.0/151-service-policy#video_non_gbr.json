@@ -1,0 +1,17 @@
+{
+    "service-policy": [
+        {
+            "id": "video-non-gbr-1",
+            "qci": 7,
+            "arp": 1,
+            "ambr": {
+                "uplink": 100000,
+                "downlink": 20000000
+            },
+            "rules": [
+                {"rule": "video-non-gbr-1",
+                 "enabled": true}
+            ]
+        }
+    ]
+}

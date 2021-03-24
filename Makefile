@@ -55,6 +55,7 @@ aether-helm-update: ${SDRAN_HELM_DIR}
 aether-up: atomix-up
 	kubectl get namespace micro-onos 2> /dev/null || kubectl create namespace micro-onos
 	(helm ls -n micro-onos | grep aether-roc-umbrella) || helm -n micro-onos install aether-roc-umbrella ${SDRAN_HELM_DIR}/aether-roc-umbrella -f values-override.yaml
+        # --set onos-config.openidc.issuer=https://dex.aetherproject.org/dex --set aether-roc-gui.openidc.issuer=https://dex.aetherproject.org/dex
 
 demo-up: aether-up sdcore-adapter-up sdcore-adapter-topo
 

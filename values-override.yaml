@@ -1,13 +1,35 @@
-global:
-  storage:
-    controller: "atomix-controller.micro-onos.svc.cluster.local:5679"
+#onos-config:
+#  image:
+#    repository: smbaker/onos-config
+#    tag: smbaker
+#    pullPolicy: Always
+
+#onos-topo:
+#  image:
+#    repository: smbaker/onos-topo
+#    tag: smbaker
+#    pullPolicy: Always
+
+#onos-sdran-cli:
+#  image:
+#    repository: onosproject/onos-sdran-cli
+#    tag: v0.7.0
+
+#global:
+#  storage:
+#    controller: "atomix-controller.micro-onos.svc.cluster.local:5679"
 
 import:
   sdcore-adapter:
     enabled: true
 
 sdcore-adapter:
-  output: "/tmp/sdcore-adapter.out"
+  prometheusEnabled: false
+  image:
+    repository: smbaker/sdcore-adapter
+    tag: smbaker
+    pullPolicy: Always
+  # output: "/tmp/sdcore-adapter.out"
   # spgwEndpoint: "http://spgwc.omec:8080/v1/config"
 
 onos-gui:
@@ -21,7 +43,16 @@ aether-roc-gui:
     enabled: false
   service:
     type: NodePort
+  image:
+     repository: smbaker/aether-roc-gui
+     tag: smbaker
+     pullPolicy: Always
 
 aether-roc-api:
+   image:
+     repository: smbaker/aether-roc-api
+     tag: smbaker
+     pullPolicy: Always
+#     tag: v0.6.18
    corsOrigins:
    - https://editor.swagger.io
