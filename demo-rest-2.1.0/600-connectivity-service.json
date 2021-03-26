@@ -5,7 +5,8 @@
             "display-name": "Connectivity Service 1",
             "hss-endpoint": "http://hss.omec:8080/v1/config/imsis",
             "id": "connectivity-service-demo-1",
-            "spgwc-endpoint": "http://spgwc.omec:8080/v1/config"
+            "spgwc-endpoint": "http://spgwc.omec:8080/v1/config",
+            "pcrf-endpoint": "http://pcrf.omec:8080/v1/config/policies"
         }
     ]
 }
