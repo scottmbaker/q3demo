@@ -1,4 +1,6 @@
-#onos-config:
+onos-config:
+  openidc:
+    issuer: https://dex.aetherproject.org/dex
 #  image:
 #    repository: smbaker/onos-config
 #    tag: smbaker
@@ -25,10 +27,10 @@ import:
 
 sdcore-adapter:
   prometheusEnabled: false
-  image:
-    repository: smbaker/sdcore-adapter
-    tag: smbaker
-    pullPolicy: Always
+#  image:
+#    repository: smbaker/sdcore-adapter
+#    tag: smbaker
+#    pullPolicy: Always
   # output: "/tmp/sdcore-adapter.out"
   # spgwEndpoint: "http://spgwc.omec:8080/v1/config"
 
@@ -39,6 +41,8 @@ onos-gui:
     type: NodePort
 
 aether-roc-gui:
+  openidc:
+        issuer: https://dex.aetherproject.org/dex
   ingress:
     enabled: false
   service:
