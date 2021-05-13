@@ -1,0 +1,32 @@
+{
+    "service-rule": [
+        {
+            "id": "best-effort-internet-access",
+            "description": "rule for enabling best effort internet",
+            "charging-rule-name": "best-effort-internet-access",
+            "qos": {
+                "qci": 9,
+                "maximum-requested-bandwidth": {
+                    "uplink": 512000,
+                    "downlink": 5120000
+                },
+                "guaranteed-bitrate": {
+                    "uplink": 1,
+                    "downlink": 1
+                },
+                "arp": {
+                    "priority": 1,
+                    "preemption-capability": true,
+                    "preemption-vulnerability": true
+                },
+                "aggregate-maximum-bitrate": {
+                    "uplink": 1024000,
+                    "downlink": 10240000                    
+                }
+            },
+            "flow": {
+                "specification": "permit out ip 0.0.0.0/0 to assigned"
+            }
+        }
+    ]
+}

@@ -1,0 +1,32 @@
+{
+    "service-rule": [
+        {
+            "id": "video-non-gbr-1",
+            "description": "rule for non-gbr video",
+            "charging-rule-name": "video-non-gbr-1",
+            "qos": {
+                "qci": 9,
+                "maximum-requested-bandwidth": {
+                    "uplink": 2345,
+                    "downlink": 3456
+                },
+                "guaranteed-bitrate": {
+                    "uplink": 1111,
+                    "downlink": 2222
+                },
+                "arp": {
+                    "priority": 1,
+                    "preemption-capability": true,
+                    "preemption-vulnerability": true
+                },
+                "aggregate-maximum-bitrate": {
+                    "uplink": 4444,
+                    "downlink": 5555
+                }
+            },
+            "flow": {
+                "specification": "permit out ip 0.0.0.0/0 to assigned"
+            }
+        }
+    ]
+}
