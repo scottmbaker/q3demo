@@ -1,0 +1,20 @@
+{
+    "vcs": [
+        {
+            "id": "vcs-demo-1",
+            "template": "template-demo-1",
+            "device-group": "device-group-demo-1",
+            "upf": "upf-1",
+            "ap": "ap-list-1",
+            "application": [
+                {"application": "ip-cam-dvr",
+                 "allow": true}
+            ],
+            "uplink": 100000,
+            "downlink": 10000,
+            "traffic-class": "guaranteed",
+            "description": "Virtual Connectivity Service for my IP Cameras",
+            "display-name": "My IP Cam Slice"
+        }
+    ]
+}

@@ -1,0 +1,12 @@
+{
+    "template": [
+        {
+            "uplink": 100000,
+            "downlink": 10000,
+            "traffic-class": "guaranteed",
+            "description": "IP Camera",
+            "display-name": "IP Camera",
+            "id": "template-demo-1"
+        }
+    ]
+}

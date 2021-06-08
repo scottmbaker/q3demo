@@ -1,0 +1,14 @@
+{
+    "application": [
+        {
+            "display-name": "IP Camera NVR",
+            "id": "ip-cam-dvr",
+            "endpoint": [
+                {"name": "web",
+                 "address": "1.2.3.4",
+                 "port-start": 8080,
+                 "port-end": 8081}
+            ]
+        }
+    ]
+}

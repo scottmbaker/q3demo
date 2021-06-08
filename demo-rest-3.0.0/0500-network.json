@@ -1,0 +1,10 @@
+{
+    "network": [
+        {
+            "display-name": "MyNetwork",
+            "id": "network-demo-1",
+            "mcc": 123,
+            "mnc": 45
+        }
+    ]
+}

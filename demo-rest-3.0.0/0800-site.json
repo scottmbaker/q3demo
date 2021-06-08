@@ -1,0 +1,10 @@
+{
+    "site": [
+        {
+            "display-name": "MySite",
+            "enterprise": "enterprise-demo-1",
+            "network": "network-demo-1",
+            "id": "site-demo-1"
+        }
+    ]
+}

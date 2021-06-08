@@ -1,0 +1,13 @@
+{
+    "ap-list": [
+        {
+            "display-name": "MyAccessPoints",
+            "id": "ap-list-1",
+            "access-points": [
+                {"address": "ap-one",
+                 "tac": 231,
+                 "enable": true}
+            ]
+        }
+    ]
+}

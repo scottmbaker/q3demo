@@ -1,0 +1,11 @@
+{
+    "ip-domain": [
+        {
+            "display-name": "MyDomain",
+            "id": "ip-domain-demo-1",
+            "dns-primary": "8.8.8.8",
+            "dns-secondary": "4.4.4.4",
+            "subnet": "1.2.3.4/24"            
+        }
+    ]
+}
