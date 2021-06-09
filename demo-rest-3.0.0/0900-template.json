@@ -3,7 +3,7 @@
         {
             "uplink": 100000,
             "downlink": 10000,
-            "traffic-class": "guaranteed",
+            "traffic-class": "conversational-voice",
             "description": "IP Camera",
             "display-name": "IP Camera",
             "id": "template-demo-1"

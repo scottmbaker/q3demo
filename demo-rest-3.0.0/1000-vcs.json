@@ -12,7 +12,7 @@
             ],
             "uplink": 100000,
             "downlink": 10000,
-            "traffic-class": "guaranteed",
+            "traffic-class": "conversational-voice",
             "description": "Virtual Connectivity Service for my IP Cameras",
             "display-name": "My IP Cam Slice"
         }

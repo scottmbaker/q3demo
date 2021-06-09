@@ -1,0 +1,11 @@
+{
+    "traffic-class": [
+        {
+            "display-name": "Conversational Voice",
+            "id": "conversational-voice",
+            "qci": 1,
+            "pdb": 100,
+            "pelr": 3
+        }
+    ]
+}
