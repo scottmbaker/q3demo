@@ -7,7 +7,8 @@
                 {"address": "ap-one",
                  "tac": 231,
                  "enable": true}
-            ]
+            ],
+            "enterprise": "enterprise-demo-1"            
         }
     ]
 }

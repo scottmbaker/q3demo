@@ -4,7 +4,8 @@
             "display-name": "MyNetwork",
             "id": "network-demo-1",
             "mcc": 123,
-            "mnc": 45
+            "mnc": 45,
+            "enterprise": "enterprise-demo-1"            
         }
     ]
 }

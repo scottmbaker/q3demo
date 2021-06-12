@@ -4,7 +4,8 @@
             "display-name": "MyUPF",
             "id": "upf-1",
             "address": "upf-one",
-            "port": 1234
+            "port": 1234,
+            "enterprise": "enterprise-demo-1"            
         }
     ]
 }
