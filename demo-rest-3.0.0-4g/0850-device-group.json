@@ -1,0 +1,15 @@
+{
+    "device-group": [
+        {
+            "display-name": "aib4gent-aib4gsite-dg",
+            "id": "aib4gent-aib4gsite-dg",
+            "imsis": [
+                {"name": "ues",
+                 "imsi-range-from": 208014567891201,
+                 "imsi-range-to": 208014567891201}
+            ],
+            "ip-domain": "aib4gent-ip",
+            "site": "aib4gent-aib4gsite"
+        }
+    ]
+}

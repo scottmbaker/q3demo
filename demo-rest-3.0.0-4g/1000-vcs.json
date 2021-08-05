@@ -1,0 +1,25 @@
+{
+    "vcs": [
+        {
+            "id": "aib4g-vcs",
+            "template": "template-demo-1",
+            "device-group": [
+                {"device-group": "aib4gent-aib4gsite-dg",
+                 "enable": true}
+            ],
+            "upf": "aib4gent-upf",
+            "ap": "aib4gent-ap",
+            "application": [
+                {"application": "iot-app",
+                 "allow": true}
+            ],
+            "sst": 10,
+            "sd": 10203,
+            "uplink": 4000000,
+            "downlink": 20000000,
+            "traffic-class": "platinum",
+            "description": "Virtual Connectivity Service for my IP Cameras",
+            "display-name": "aib4gent-vcs"
+        }
+    ]
+}

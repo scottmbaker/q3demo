@@ -1,0 +1,11 @@
+{
+    "upf": [
+        {
+            "display-name": "aib4gent-upf",
+            "id": "aib4gent-upf",
+            "address": "upf",
+            "port": 8805,
+            "enterprise": "aib4gent"
+        }
+    ]
+}

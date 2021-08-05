@@ -1,0 +1,16 @@
+{
+    "application": [
+        {
+            "display-name": "IOT App",
+            "id": "iot-app",
+            "endpoint": [
+                {"name": "web",
+                 "address": "1.1.1.1",
+                 "port-start": 40000,
+                 "port-end": 40000,
+                 "protocol": "UDP"}
+            ],
+            "enterprise": "aib4gent"            
+        }
+    ]
+}

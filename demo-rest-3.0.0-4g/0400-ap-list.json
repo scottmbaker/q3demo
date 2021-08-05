@@ -1,0 +1,14 @@
+{
+    "ap-list": [
+        {
+            "display-name": "aib4ent-ap",
+            "id": "aib4gent-ap",
+            "access-points": [
+                {"address": "aiab-enb1",
+                 "tac": 1,
+                 "enable": true}
+            ],
+            "enterprise": "aib4gent"
+        }
+    ]
+}

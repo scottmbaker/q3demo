@@ -1,0 +1,11 @@
+{
+    "traffic-class": [
+        {
+            "display-name": "Platinum",
+            "id": "platinum",
+            "qci": 1,
+            "pdb": 100,
+            "pelr": 3
+        }
+    ]
+}
