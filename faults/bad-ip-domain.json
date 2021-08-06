@@ -1,0 +1,13 @@
+{
+    "ip-domain": [
+        {
+            "display-name": "aib4gent-ip",
+            "id": "aib4gent-ip",
+            "dns-primary": "8.8.8.8",
+            "subnet": "172.250.0.0/16",
+            "mtu": 1460,
+            "enterprise": "aib4gent",
+            "dnn": "wrong"
+        }
+    ]
+}
