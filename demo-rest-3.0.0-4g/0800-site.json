@@ -5,8 +5,8 @@
             "enterprise": "aib4gent",
             "id": "aib4gent-aib4gsite",
             "imsi-definition": {
-                "mcc": 208,
-                "mnc": 93,
+                "mcc": "208",
+                "mnc": "93",
                 "enterprise": 567,
                 "format": "SSSSSSSSSSSSSSS"
             }

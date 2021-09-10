@@ -7,6 +7,7 @@
                 {"device-group": "aib4gent-aib4gsite-dg",
                  "enable": true}
             ],
+            "enterprise": "aib4gent",
             "upf": "aib4gent-upf",
             "ap": "aib4gent-ap",
             "application": [
@@ -14,7 +15,7 @@
                  "allow": true}
             ],
             "sst": 10,
-            "sd": 10203,
+            "sd": 66051,
             "uplink": 4000000,
             "downlink": 20000000,
             "traffic-class": "platinum",

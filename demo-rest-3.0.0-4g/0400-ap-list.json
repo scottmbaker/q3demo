@@ -5,7 +5,7 @@
             "id": "aib4gent-ap",
             "access-points": [
                 {"address": "aiab-enb1",
-                 "tac": 1,
+                 "tac": "0001",
                  "enable": true}
             ],
             "enterprise": "aib4gent"
