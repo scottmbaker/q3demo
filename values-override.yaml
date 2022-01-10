@@ -1,14 +1,18 @@
 onos-config:
-  openidc:
-    issuer: https://dex.aetherproject.org/dex
-#  image:
-#    repository: smbaker/onos-config
+#  openidc:
+#    issuer: https://dex.aetherproject.org/dex
+#  plugin:
+#    compiler:
+#      target: "github.com/sbconsulting/onos-config@diags"
+  image:
+    tag: v0.10.4
+#    repository: docker.smbaker.dev/onos-config
 #    tag: smbaker
 #    pullPolicy: Always
 
 #onos-topo:
 #  image:
-#    repository: smbaker/onos-topo
+#    repository: docker.smbaker.dev/onos-topo
 #    tag: smbaker
 #    pullPolicy: Always
 
@@ -24,15 +28,33 @@ onos-config:
 import:
   sdcore-adapter:
     enabled: true
+  onos-gui:
+    enabled: true
 
 sdcore-adapter:
   prometheusEnabled: false
-#  image:
-#    repository: smbaker/sdcore-adapter
-#    tag: smbaker
-#    pullPolicy: Always
-  # output: "/tmp/sdcore-adapter.out"
-  # spgwEndpoint: "http://spgwc.omec:8080/v1/config"
+  image:
+    repository: docker.smbaker.dev/sdcore-adapter
+    tag: smbaker
+    pullPolicy: Always
+
+x-sdcore-adapter-v4:
+  partialUpdateEnabled: true
+  prometheusEnabled: false
+  image:
+    repository: docker.smbaker.dev/sdcore-adapter
+    tag: smbaker
+    pullPolicy: Always
+
+x-sdcore-exporter:
+  prometheusEnabled: false
+  image:
+    repository: docker.smbaker.dev/sdcore-adapter
+    tag: smbaker
+    pullPolicy: Always
+
+onos-exporter:
+  prometheusEnabled: false
 
 onos-gui:
   ingress:
@@ -40,23 +62,60 @@ onos-gui:
   service:
     type: NodePort
 
-aether-roc-gui:
-  openidc:
-        issuer: https://dex.aetherproject.org/dex
+aether-roc-gui-v21:
   ingress:
     enabled: false
   service:
     type: NodePort
-  image:
-     repository: smbaker/aether-roc-gui
-     tag: smbaker
-     pullPolicy: Always
+#  openidc:
+#        issuer: https://dex.aetherproject.org/dex
+#  image:
+#     repository: smbaker/aether-roc-gui
+#     tag: smbaker
+#     pullPolicy: Always
+
+aether-roc-gui:
+  ingress:
+    enabled: false
+  service:
+    type: NodePort
+#  openidc:
+#        issuer: https://dex.aetherproject.org/dex
 
 aether-roc-api:
    image:
-     repository: smbaker/aether-roc-api
+     repository: docker.smbaker.dev/aether-roc-api
+     websocketsidecar:
+         repository: docker.smbaker.dev/aether-roc-websocket
      tag: smbaker
      pullPolicy: Always
-#     tag: v0.6.18
-   corsOrigins:
-   - https://editor.swagger.io
+#   corsOrigins:
+#   - https://editor.swagger.io
+
+not-prometheus:
+  serverFiles:
+    prometheus.yml:
+      scrape_configs:
+      # default scrape interval is 1m
+
+      # scrape thyself
+      - job_name: prometheus
+        scrape_interval: 5m
+        static_configs:
+          - targets: ['sdcore-exporter:2112']
+
+grafana:
+  adminUser: admin
+  adminPassword: myadminpassword
+  grafana.ini:
+    auth.generic_oauth:
+      enabled: false
+  datasources:
+    datasources.yaml:
+      apiVersion: 1
+      datasources:
+        - name: Prometheus
+          type: prometheus
+          url: http://aether-roc-umbrella-prometheus-server/
+          access: proxy
+          isDefault: true
