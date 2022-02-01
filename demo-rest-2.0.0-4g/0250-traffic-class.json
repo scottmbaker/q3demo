@@ -1,0 +1,15 @@
+{
+    "enterprise": [
+        {
+            "ent-id": "aib4gent",
+            "traffic-class": [
+                {
+                    "display-name": "Platinum",
+                    "tc-id": "platinum",
+                    "qci": 1,
+                    "arp": 2
+                }
+            ]
+        }
+    ]
+}

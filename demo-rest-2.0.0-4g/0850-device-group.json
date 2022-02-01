@@ -1,0 +1,30 @@
+{
+    "enterprise": [
+        {
+            "ent-id": "aib4gent",
+            "site": [
+                {
+                    "site-id": "aib4gent-aib4gsite",       
+                    "device-group": [
+                        {
+                            "display-name": "aib4gent-aib4gsite-dg",
+                            "dg-id": "aib4gent-aib4gsite-dg",
+                            "mbr": {
+                                "uplink": 4000000,
+                                "downlink": 20000000
+                            },
+                            "traffic-class": "platinum",
+                            "ip-domain": "aib4gent-ip",
+                            "device": [
+                                {
+                                    "device-id": "aib4gent-dev",
+                                    "enable": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

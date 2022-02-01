@@ -1,0 +1,21 @@
+{
+    "enterprise": [
+        {
+            "ent-id": "aib4gent",
+            "site": [
+                {
+                    "site-id": "aib4gent-aib4gsite",            
+                    "upf": [
+                        {
+                            "display-name": "aib4gent-upf",
+                            "upf-id": "aib4gent-upf",
+                            "address": "upf",
+                            "port": 8805,
+                            "config-endpoint": "http://198.0.0.59:8080"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

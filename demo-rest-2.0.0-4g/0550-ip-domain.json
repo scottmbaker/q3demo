@@ -1,0 +1,22 @@
+{
+    "enterprise": [
+        {
+            "ent-id": "aib4gent",
+            "site": [
+                {
+                    "site-id": "aib4gent-aib4gsite",      
+                    "ip-domain": [
+                        {
+                            "display-name": "aib4gent-ip",
+                            "ip-id": "aib4gent-ip",
+                            "dns-primary": "8.8.8.8",
+                            "subnet": "172.250.0.0/16",
+                            "mtu": 1460,
+                            "dnn": "4g-aiab-internet"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

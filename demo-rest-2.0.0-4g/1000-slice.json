@@ -1,0 +1,35 @@
+{
+  "enterprise": [
+    {
+      "ent-id": "aib4gent",
+      "site": [
+          {
+            "site-id": "aib4gent-aib4gsite",      
+            "slice": [
+                {
+                    "slice-id": "aib4g-vcs",
+                    "device-group": [
+                        {"device-group": "aib4gent-aib4gsite-dg",
+                        "enable": true}
+                    ],
+                    "upf": "aib4gent-upf",
+                    "filter": [
+                        {"application": "iot-app",
+                        "allow": true}
+                    ],
+                    "sst": 10,
+                    "sd": 66051,
+                    "mbr": {
+                      "uplink": 5430000,
+                      "downlink": 21000000
+                    },
+                    "description": "Virtual Connectivity Service for my IP Cameras",
+                    "display-name": "aib4gent-vcs",
+                    "default-behavior": "ALLOW-PUBLIC"
+                }
+              ]
+          }
+        ]
+      }
+    ]
+}

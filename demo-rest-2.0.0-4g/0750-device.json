@@ -1,0 +1,19 @@
+{
+    "enterprise": [
+        {
+            "ent-id": "aib4gent",
+            "site": [
+                {
+                    "site-id": "aib4gent-aib4gsite",            
+                    "device": [
+                        {
+                            "display-name": "aib4gent-dev",
+                            "dev-id": "aib4gent-dev",                            
+                            "sim-card": "aib4gent-sim"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

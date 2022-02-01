@@ -1,0 +1,19 @@
+{
+    "enterprise": [
+        {
+            "ent-id": "aib4gent",
+            "site": [
+                {
+                    "site-id": "aib4gent-aib4gsite",            
+                    "sim-card": [
+                        {
+                            "display-name": "aib4gent-sim",
+                            "sim-id": "aib4gent-sim",
+                            "imsi": 208014567891201
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,15 @@
+{
+    "enterprise": [
+        {
+            "connectivity-service": [
+                {
+                    "connectivity-service": "aib4gcs",
+                    "enabled": true
+                }
+            ],
+            "description": "Enterprise configuration",
+            "display-name": "aib4gent",
+            "ent-id": "aib4gent"
+        }
+    ]
+}
