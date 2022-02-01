@@ -3,8 +3,8 @@
         {
             "display-name": "MyUPF",
             "id": "upf-1",
-            "address": "upf-one",
-            "port": 1234,
+            "address": "upf.menlo.aetherproject.org",
+            "port": 8805,
             "enterprise": "enterprise-demo-1"            
         }
     ]

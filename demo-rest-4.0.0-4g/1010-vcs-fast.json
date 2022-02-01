@@ -1,0 +1,35 @@
+{
+    "vcs": [
+        {
+            "id": "aib4g-vcs-fast",
+            "template": "template-demo-1",
+            "device-group": [
+                {"device-group": "aib4gent-aib4gsite-dg",
+                 "enable": true}
+            ],
+            "enterprise": "aib4gent",
+            "upf": "aib4gent-upf",
+            "filter": [
+                {"application": "iot-app",
+                 "allow": true}
+            ],
+            "sst": 10,
+            "sd": 66052,
+            "device": {
+              "mbr": {
+                "uplink": 4000000,
+                "downlink": 5000000000
+              }
+            },
+            "slice": {
+              "mbr": {
+                "uplink": 5430000,
+                "downlink": 11000000000
+              }
+            },            
+            "traffic-class": "platinum",
+            "description": "Virtual Connectivity Service for my IP Cameras",
+            "display-name": "aib4gent-vcs"
+        }
+    ]
+}

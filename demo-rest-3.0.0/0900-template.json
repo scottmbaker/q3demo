@@ -1,9 +1,11 @@
 {
     "template": [
         {
-            "uplink": 100000,
-            "downlink": 10000,
-            "traffic-class": "conversational-voice",
+            "sst": 255,
+            "sd": 65565,
+            "uplink": 4000000,
+            "downlink": 20000000,
+            "traffic-class": "platinum",
             "description": "IP Camera",
             "display-name": "IP Camera",
             "id": "template-demo-1"

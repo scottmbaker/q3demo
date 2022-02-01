@@ -1,18 +1,23 @@
 {
     "vcs": [
         {
-            "id": "vcs-demo-1",
+            "id": "slice1",
             "template": "template-demo-1",
-            "device-group": "device-group-demo-1",
+            "device-group": [
+                {"device-group": "iot-camera",
+                 "enable": true}
+            ],
             "upf": "upf-1",
             "ap": "ap-list-1",
             "application": [
-                {"application": "ip-cam-dvr",
+                {"application": "iot-app",
                  "allow": true}
             ],
-            "uplink": 100000,
-            "downlink": 10000,
-            "traffic-class": "conversational-voice",
+            "sst": 255,
+            "sd": 65565,
+            "uplink": 4000000,
+            "downlink": 20000000,
+            "traffic-class": "platinum",
             "description": "Virtual Connectivity Service for my IP Cameras",
             "display-name": "My IP Cam Slice"
         }

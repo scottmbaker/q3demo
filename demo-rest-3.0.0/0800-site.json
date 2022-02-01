@@ -3,8 +3,13 @@
         {
             "display-name": "MySite",
             "enterprise": "enterprise-demo-1",
-            "network": "network-demo-1",
-            "id": "site-demo-1"
+            "id": "menlo",
+            "imsi-definition": {
+                "mcc": 123,
+                "mnc": 456,
+                "enterprise": 789,
+                "format": "CCCNNNEEESSSSSS"
+            }
         }
     ]
 }

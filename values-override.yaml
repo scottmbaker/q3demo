@@ -31,14 +31,15 @@ import:
   onos-gui:
     enabled: true
 
-sdcore-adapter:
+x-sdcore-adapter-v4:
+  partialUpdateEnabled: true
   prometheusEnabled: false
   image:
     repository: docker.smbaker.dev/sdcore-adapter
     tag: smbaker
     pullPolicy: Always
 
-x-sdcore-adapter-v4:
+sdcore-adapter-v2:
   partialUpdateEnabled: true
   prometheusEnabled: false
   image:

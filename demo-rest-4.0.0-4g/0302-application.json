@@ -3,14 +3,15 @@
         {
             "display-name": "IOT App",
             "id": "iot-app",
+            "address": "192.168.7.43", 
             "endpoint": [
-                {"name": "web",
-                 "address": "1.1.1.1",
+                {"endpoint-id": "web",
+                 "display-name": "web",
                  "port-start": 40000,
                  "port-end": 40000,
                  "protocol": "UDP"}
             ],
-            "enterprise": "enterprise-demo-1"            
+            "enterprise": "aib4gent"            
         }
     ]
 }

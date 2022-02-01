@@ -1,0 +1,23 @@
+{
+    "device-group": [
+        {
+            "display-name": "aib4gent-aib4gsite-dg",
+            "id": "aib4gent-aib4gsite-dg",
+            "device": {
+                "mbr": {
+                  "uplink": 4000000,
+                  "downlink": 20000000
+                },
+                "traffic-class": "platinum"
+            },      
+            "imsis": [
+                {"imsi-id": "ues",
+                 "name": "ues",
+                 "imsi-range-from": 208014567891201,
+                 "imsi-range-to": 208014567891201}
+            ],
+            "ip-domain": "aib4gent-ip",
+            "site": "aib4gent-aib4gsite"
+        }
+    ]
+}

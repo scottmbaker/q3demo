@@ -4,8 +4,8 @@
             "display-name": "MyAccessPoints",
             "id": "ap-list-1",
             "access-points": [
-                {"address": "ap-one",
-                 "tac": 231,
+                {"address": "menlo-gnb1",
+                 "tac": 1,
                  "enable": true}
             ],
             "enterprise": "enterprise-demo-1"            

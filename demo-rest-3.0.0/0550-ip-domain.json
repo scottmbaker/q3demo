@@ -2,10 +2,11 @@
     "ip-domain": [
         {
             "display-name": "MyDomain",
-            "id": "ip-domain-demo-1",
+            "id": "pool1",
             "dns-primary": "8.8.8.8",
-            "dns-secondary": "4.4.4.4",
-            "subnet": "1.2.3.4/24"            
+            "subnet": "10.91.0.0/16",
+            "mtu": 1460,
+            "enterprise": "enterprise-demo-1"
         }
     ]
 }

@@ -1,0 +1,15 @@
+{
+    "application": [
+        {
+            "display-name": "IOT App",
+            "id": "iot-app",
+            "address": "192.168.7.43", 
+            "endpoint": [
+                {"endpoint-id": "web",
+                 "display-name": "web"
+               }
+            ],
+            "enterprise": "aib4gent"            
+        }
+    ]
+}

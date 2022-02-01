@@ -1,0 +1,12 @@
+{
+    "template": [
+        {
+            "sst": 255,
+            "sd": 66051,
+            "description": "IP Camera",
+            "display-name": "IP Camera",
+            "id": "template-demo-1",
+            "default-behavior": "ALLOW-PUBLIC"
+        }
+    ]
+}

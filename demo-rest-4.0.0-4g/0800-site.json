@@ -1,0 +1,33 @@
+{
+    "site": [
+        {
+            "display-name": "aib4gent-aib4gsite",
+            "enterprise": "aib4gent",
+            "id": "aib4gent-aib4gsite",
+            "imsi-definition": {
+                "mcc": "208",
+                "mnc": "93",
+                "enterprise": 567,
+                "format": "SSSSSSSSSSSSSSS"
+            },
+            "small-cell": [
+                {"small-cell-id": "myradio",
+                 "display-name": "myradio",
+                 "address": "aiab-enb1",
+                 "tac": "0001",
+                 "enable": true}
+            ],
+            "monitoring": {
+                "edge-cluster-prometheus-url": "http://mysite-edge-cluster-prometheus:9090",
+                "edge-monitoring-prometheus-url": "http://rancher-monitoring-prometheus.cattle-monitoring-system.svc:9090",
+                "edge-device": [
+                    {
+                        "edge-device-id": "monitoring-pi-1",
+                        "display-name": "my monitoring device",
+                        "description": "description of my monitoring device"
+                    }
+                ]                
+            }
+        }
+    ]
+}

@@ -2,17 +2,14 @@
     "device-group": [
         {
             "display-name": "MyAccessPoints",
-            "id": "device-group-demo-1",
+            "id": "iot-camera",
             "imsis": [
                 {"name": "camera1",
-                 "imsi-range-from": 208014567891200,
-                 "imsi-range-to": 208014567891200},
-                {"name": "camera2",
-                 "imsi-range-from": 208014567891201,
-                 "imsi-range-to": 208014567891201}
+                 "imsi-range-from": 123456,
+                 "imsi-range-to": 123457}
             ],
-            "ip-domain": "ip-domain-demo-1",
-            "site": "site-demo-1"
+            "ip-domain": "pool1",
+            "site": "menlo"
         }
     ]
 }

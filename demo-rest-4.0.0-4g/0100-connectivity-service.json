@@ -2,9 +2,9 @@
     "connectivity-service": [
         {
             "description": "Connectivity service endpoints",
-            "display-name": "Connectivity Service 1",
+            "display-name": "aib4gcs",
             "core-5g-endpoint": "http://198.0.0.59:9089/config",
-            "id": "connectivity-service-demo-1"
+            "id": "aib4gcs"
         }
     ]
 }
